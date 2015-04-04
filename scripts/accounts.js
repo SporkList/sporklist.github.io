@@ -6,6 +6,7 @@ $(document).ready(function() {
         var sporklist = Parse.Object.extend("Sporklist");
         var query = new Parse.Query(sporklist);
 
+        console.log(currUser);
         query.equalTo("author", currUser.id());
         query.limit(1000);
 
