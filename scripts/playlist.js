@@ -46,3 +46,15 @@ function updateSporklists (sporklists, position) {
     console.log("IT'S WORKING");
   });
 }());
+
+/* This is the angular for the sidebar */
+(function () {
+  angular.module('MainWindow',[]).controller('MainCtrl',function($scope) {
+    /* EDIT THE FOLLOWING FOR REAL DATA */
+
+    console.log("working #2");
+    console.log("working #2");
+    console.log("working #2");
+    console.log("working #2");
+  });
+}());

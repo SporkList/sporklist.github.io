@@ -3,11 +3,9 @@
 console.log("saldjflsdjfklsjdlf");
 
 /* This is the angular for the main window */
-function () {
+(function () {
   angular.module('MainWindow',[]).controller('MainCtrl',function($scope) {
     /* EDIT THE FOLLOWING FOR REAL DATA */
-
-    console.log("b");
 
     /* The defaults for the home page.
      * The only thing that should show is the sidebar and the fb login.
@@ -16,5 +14,13 @@ function () {
     $scope.friend = false;
     $scope.search = false;
     $scope.map = false;
+
+    console.log($scope.user);
+    console.log($scope.user);
+    console.log($scope.user);
+    console.log($scope.user);
+    console.log($scope.user);
+
+
   });
-}();
+}());
