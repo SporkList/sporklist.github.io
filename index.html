@@ -45,11 +45,11 @@
         </div>
         <div id="info-pane" ng-app="MainWindow">
             <input id="search-bar" type="text" placeholder="Search Restaurants" value=""></input>
-            <div id="content-box" ng-controller="MainCtrl">
+            <div id="content-box" ng-controller="MainCtrl as layout">
                 <div id="login-box" onclick="logIn()">
                     <div id="login-button">Log In Using Facebook</div>
                 </div>
-                <div id="my-profile-box" ng-show="user">
+                <div id="my-profile-box" ng-show="layout.user">
                     <img class="profile-picture" src="" />
                     <div class="profile-info">
                         Stuff<br>
