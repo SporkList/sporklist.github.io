@@ -32,6 +32,7 @@ function updateSporklists (sporklists) {
       'Who',
       'Knows!'
     ];
+  };
 }
 
 /* This is the wrapper for the entire UI */
