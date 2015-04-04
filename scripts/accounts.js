@@ -30,8 +30,8 @@ $(document).ready(function() {
                     user.save();
                 });
 
-                FB.api("/me/friendlists", function(response) {
-                    console.log("why");
+                FB.api("/me/friends", function(response) {
+                    console.log("oh");
                     console.log(response);
                     user.save();
                 });
