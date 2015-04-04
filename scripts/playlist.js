@@ -30,5 +30,9 @@ function updateSporklists (sporklists) {
 
     /* playlists -> get playlists from Parse */
     $scope.playlists = playlists;
+
+    $scope.onClick = function() {
+      alert("nice meme");
+    }
   });
 }());

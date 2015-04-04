@@ -38,7 +38,7 @@
             <div id="playlist-header">My Sporklists</div>
             <div id="playlists" ng-controller="PLCtrl as cont">
                 <!-- List of playlists -->
-                <div class="playlist" ng-repeat="plist in playlists" ng-click="alert('nice meme')">{{plist.get("name")}}</div>
+                <div class="playlist" ng-repeat="plist in playlists" ng-click="onClick()">{{plist.get("name")}}</div>
             </div>
             <div id="new-playlist-button">New Playlist +</div>
         </div>
