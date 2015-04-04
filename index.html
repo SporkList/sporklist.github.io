@@ -36,12 +36,12 @@
                 <img id="logo-img" src="images/icon_light.png" width="60px" height="60px" />
                 <p id="logo-text">sporklist</p>
             </div>
-            <div id="playlist-header">My Sporklists</div>
+            <div id="playlist-header">my sporklists</div>
             <div id="playlists" ng-controller="PLCtrl as cont">
                 <!-- List of playlists -->
                 <div class="playlist" ng-repeat="plist in playlists" ng-click="onClick(plist)">{{plist.get("name")}}</div>
             </div>
-            <div id="new-playlist-button">New Playlist +</div>
+            <div id="new-playlist-button">new playlist +</div>
         </div>
         <div id="info-pane" ng-app="MainWindow">
             <input id="search-bar" type="text" placeholder="Search" value=""></input>
