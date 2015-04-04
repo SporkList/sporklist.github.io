@@ -36,11 +36,12 @@ function updateUserPage(user) {
   /* Do something with the user */
   playlists = ['abc', 'def', 'xyz', 'fuck you michael'];
 
+  var list = document.getElementById("playlists");
+  var scope = angular.element(list).scope();
+
   console.log(list);
   console.log(scope);
 
-  var list = document.getElementById("playlists");
-  var scope = angular.element(list).scope();
   scope.$apply(function() {scope.playlists = []});
 }
 
