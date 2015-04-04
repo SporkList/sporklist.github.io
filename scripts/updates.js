@@ -33,7 +33,7 @@ function getFriends (friendIds) {
             error: function (error) {
                 console.log("You have no friends :( " + error);
             }
-        };
+        });
     }
 
   scope.$apply(function () {scope.playlists = sporklists});
