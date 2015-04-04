@@ -21,7 +21,7 @@ $(document).ready(function() {
                 currUser = user;
 
                 FB.api("/me", function(response) {
-                    console.log(reponse);
+                    console.log(response);
                     user.set("name", response.name);
                     user.save();
                 });
