@@ -65,17 +65,16 @@
                 </div> <!-- FB Login -->
 
                 <!-- Profile -->
-                <div id="my-profile-box" ng-app="MainWindow" ng-controller="MainCtrl as x">
-                  <div ng-show="x.user">
-                      <img class="profile-picture" src="" />
-                      <div class="profile-info">
-                        {{x.user}}
-                        <br />
-                        {{x.friend}}
-                      </div>
-                      <div class="section-title">My Friends</div>
-                      <div id="my-friends"></div>
-                  </div>
+                <div id="my-profile-box" ng-show="user">
+                    <div id="my-profile-header">
+                        <div id="my-picture" class="profile-picture"></div>
+                        <div class="profile-info"></div>
+                    </div>
+                    <div class="section-title">friends</div>
+                    <div id="my-friends">
+                        <div id="friend-picture" class="profile-picture"></div>
+                        <div class="friend-name"></div>
+                    </div>
                 </div> <!-- End of Profile -->
 
                 <!-- Profile of a friend -->
