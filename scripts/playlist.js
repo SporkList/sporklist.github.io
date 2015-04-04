@@ -1,7 +1,8 @@
 var playlists = [];
 
 function updateUserPage (user) {
-  /* Do something with the user */
+  /* Do something with the user
+   * OLD TEST CODE
   playlists = ['abc', 'def', 'xyz', 'fuck you michael'];
 
   var list = document.getElementById("playlists");
@@ -11,10 +12,13 @@ function updateUserPage (user) {
   console.log(scope);
 
   scope.$apply(function() {scope.playlists = playlists});
+  */
 }
 
 function updateSporklists (sporklists) {
-
+  var sidebarList = document.getElementById("playlists");
+  var scope = angular.element(list).scope();
+  scope.$apply(function() {scope.playlists = sporklists);
 }
 
 /* This is the wrapper for the entire UI */
