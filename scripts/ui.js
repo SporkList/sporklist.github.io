@@ -1,6 +1,8 @@
+var playlists = [];
+
 function updateUserPage(user) {
   /* Do something with the user */
-  var playlists = ['abc', 'def', 'xyz', 'fuck you michael'];
+  playlists = ['abc', 'def', 'xyz', 'fuck you michael'];
 
   var list = document.getElementById("playlists");
   var scope = angular.element(list).scope();
