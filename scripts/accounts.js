@@ -14,6 +14,7 @@ $(document).ready(function() {
             success: function(results) {
                 // Do something with the returned Parse.Object values
                 for (var i = 0; i < results.length; i++) { 
+                    console.log("yes");
                     lists.push(results[i]);
                 }
             },
