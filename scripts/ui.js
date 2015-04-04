@@ -45,8 +45,8 @@ playlistLIst.controller('PLLCtrl', function() {
       {name:'xyz'}
     ];
 
-    for(var i=0;i<playlists.length;i++) {
-      console.log(playlists[i].name);
+    for(var i=0;i<$scope.playlists.length;i++) {
+      console.log($scope.playlists[i].name);
     }
 
     /* User profile -> get user info from Parse */
