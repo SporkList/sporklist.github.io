@@ -34,6 +34,7 @@ function getFriends (friendIds) {
                 console.log("You have no friends :( " + error);
             }
         };
+    }
 
   scope.$apply(function () {scope.playlists = sporklists});
 }
