@@ -25,18 +25,6 @@ function updateSporklists (sporklists, position) {
 
 /* This is the angular for the sidebar */
 (function () {
-  angular.module('MWindow',[]).controller('MCtrl',function($scope) {
-    /* EDIT THE FOLLOWING FOR REAL DATA */
-
-    console.log("working #2");
-    console.log("working #2");
-    console.log("working #2");
-    console.log("working #2");
-  });
-}());
-
-/* This is the angular for the sidebar */
-(function () {
   angular.module('Playlist',[]).controller('PLCtrl',function($scope) {
     /* EDIT THE FOLLOWING FOR REAL DATA */
 
