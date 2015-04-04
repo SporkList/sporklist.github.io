@@ -42,7 +42,7 @@ function updateUserPage(user) {
   console.log(list);
   console.log(scope);
 
-  scope.$apply(function() {scope.playlists = []});
+  scope.$apply(function() {scope.playlists = playlists});
 }
 
 /* This is the wrapper for the entire UI */
