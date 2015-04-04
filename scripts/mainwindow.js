@@ -1,6 +1,6 @@
 /* Hides 'my-profile-box by default */
 
-console.log("saldjflsdjfklsjdlf");
+console.log("ddd");
 
 /* This is the angular for the main window */
 var mod = angular.module('MainWindow',[]);
@@ -25,4 +25,4 @@ mod.controller('MainCtrl',function($scope) {
   console.log($scope.user);
 
 
-});
+})();
