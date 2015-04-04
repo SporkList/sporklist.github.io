@@ -45,7 +45,9 @@ playlistLIst.controller('PLLCtrl', function() {
       {'name':'xyz'}
     ];
 
-    console.log("sdlkjdflkajl");
+    for(k in playlists) {
+      console.log(k.name);
+    }
 
     /* User profile -> get user info from Parse */
     $scope.user = {'name':'yiwen song','pictureURL':'img/sample.jpg'};
