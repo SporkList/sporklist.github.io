@@ -42,7 +42,7 @@ function logIn() {
             updateUserPage(user);
             retrieveSporklists(user);
 
-            $("#login-pane").fadeOut(1000);
+            $("#login-box").fadeOut(700);
         },
         error: function(user, error) {
             alert("You must sign into Facebook to use this app");
