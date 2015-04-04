@@ -45,7 +45,7 @@ playlistLIst.controller('PLLCtrl', function() {
       {'name':'xyz'}
     ];
 
-    for(int i=0;i<playlists.length;i++) {
+    for(var i=0;i<playlists.length;i++) {
       console.log(playlists[i].name);
     }
 
