@@ -46,19 +46,18 @@
         <div id="info-pane" ng-app="MainWindow">
             <input id="search-bar" type="text" placeholder="Search Restaurants" value=""></input>
             <div id="content-box" ng-controller="MainCtrl as x">
-                <!--
                 <div id="login-box" onclick="logIn()">
                     <div id="login-button">Log In Using Facebook</div>
                 </div>
-                -->
                 <!--
                 <div id="my-profile-box">
                 -->
                 <div ng-show="user">
                     <img class="profile-picture" src="" />
                     <div class="profile-info">
-                        Stuff <br />
-                        Stuff
+                      {{x.user}}
+                      <br />
+                      {{x.friend}}
                     </div>
                     <div class="section-title">My Friends</div>
                     <div id="my-friends"></div>

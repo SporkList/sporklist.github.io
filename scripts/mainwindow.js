@@ -5,19 +5,8 @@
   angular.module('MainWindow',[]).controller('MainCtrl',function($scope) {
     /* EDIT THE FOLLOWING FOR REAL DATA */
 
-    /* playlists -> get playlists from Parse */
-
-    /*
-    $scope.playlists = playlists;
-
-    $scope.onClick = function(plist) {
-      alert("nice meme");
-      console.log(plist);
-    }
-    */
-
     /* The defaults for the home page.
-     * Default is user's profile
+     * The only thing that should show is the sidebar and the fb login.
      */
     $scope.user = false;
     $scope.friend = false;
