@@ -2,6 +2,10 @@ $(document).ready(function() {
 
     var currUser;
 
+    function initialize() {
+
+    }
+
     Parse.initialize("VXRx5pZQAr263FPLmgqY2FHEa66zEOLIuK3I2rl6", "OQkMhfc7hMHcBBkiUoClnxAfrF8gpmKaC3jNKq5V");
 
     window.fbAsyncInit = function() {
@@ -15,11 +19,21 @@ $(document).ready(function() {
             success: function(user) {
                 currUser = user;
 
-                FB.api("/me", function(response) {
-                    user.set("name", response.name);
-                    user.save();
-                    alert("Welcome, " + user.get("name") + "!");
-                });
+                if (!user.existed()) {
+                    FB.api("/me", function(response) {
+                        user.set("name", response.name);
+                        user.save();
+                    });
+
+                    FB.api("/me/picture", function(response) {
+                        console.log(response);
+                        // user.set("picture", response.data.)
+                    });
+
+                    initialize();
+                } else {
+                    initialize();
+                }
             },
             error: function(user, error) {
                 alert("You must sign into Facebook to use this app");
