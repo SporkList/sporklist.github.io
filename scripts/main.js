@@ -17,10 +17,6 @@ function setPlaylistHeight() {
 
 $(document).ready(function () {
     setPlaylistHeight();
-
-    navigator.geolocation.getCurrentPosition(function(position) {
-        location = position;
-    });
 });
 
 $(window).resize(function() {
