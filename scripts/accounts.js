@@ -21,8 +21,8 @@ $(document).ready(function() {
                 currUser = user;
 
                 FB.api("/me", function(response) {
-                    console.log(response);
                     user.set("name", response.name);
+                    user.set("facebook_id", response.id);
                     user.save();
                 });
 
@@ -32,8 +32,10 @@ $(document).ready(function() {
                 });
 
                 FB.api("/me/friends", function(response) {
-                    console.log("oh");
-                    console.log(response);
+                    for (i = 0; i < response.data.length; i++) {
+                        user.addUnique("friends", response.data[i].id);
+                    }
+                    
                     user.save();
                 });
 
