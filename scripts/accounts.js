@@ -20,22 +20,19 @@ $(document).ready(function() {
             success: function(user) {
                 currUser = user;
 
-                if (!user.existed()) {
-                    FB.api("/me", function(response) {
-                        user.set("name", response.name);
-                    });
+                FB.api("/me", function(response) {
+                    user.set("name", response.name);
+                });
 
-                    FB.api("/me/picture?type=large", function(response) {
-                        user.set("picture", response.data.url);
-                    });
+                FB.api("/me/picture?type=large", function(response) {
+                    user.set("picture", response.data.url);
+                });
 
-                    FB.api("/me/friendlists", function(response) {
-                        console.log(response);
-                    });
+                FB.api("/me/friendlists", function(response) {
+                    console.log(response.data);
+                });
 
-                    user.save();
-                }
-
+                user.save();
                 initialize();
             },
             error: function(user, error) {
