@@ -40,7 +40,7 @@ function logIn() {
             });
 
             navigator.geolocation.getCurrentPosition(function(location) {
-                position = position
+                position = location;
             });
 
             updateUserPage(user);
