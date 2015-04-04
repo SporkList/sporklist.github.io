@@ -17,3 +17,7 @@ function updateSporklists (sporklists, position) {
 
   scope.$apply(function () {scope.playlists = sporklists});
 }
+
+function updateSporklist(sporklist) {
+	
+}

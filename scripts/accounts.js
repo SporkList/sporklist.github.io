@@ -39,10 +39,6 @@ function logIn() {
                 user.save();
             });
 
-            navigator.geolocation.getCurrentPosition(function(location) {
-                position = location;
-            });
-
             updateUserPage(user);
             retrieveSporklists(user);
 
