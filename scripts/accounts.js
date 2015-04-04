@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     function retrieveSporklists() {
         var sporklist = Parse.Object.extend("Sporklist");
-        var query = new Parse.query(sporklist);
+        var query = new Parse.Query(sporklist);
 
         query.equalTo("author", currUser.id());
         query.limit(1000);
