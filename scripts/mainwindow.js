@@ -5,7 +5,7 @@ console.log("ddd");
 /* This is the angular for the main window */
 var mod = angular.module('MainWindow',[]);
 
-mod.controller('MainCtrl',function($scope) {
+function setScope($scope) {
   /* EDIT THE FOLLOWING FOR REAL DATA */
 
   console.log("b");
@@ -25,4 +25,6 @@ mod.controller('MainCtrl',function($scope) {
   console.log($scope.user);
 
 
-})();
+}
+
+mod.controller('MainCtrl',setScope($scope))();
