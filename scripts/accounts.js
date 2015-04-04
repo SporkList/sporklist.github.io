@@ -16,14 +16,13 @@ $(document).ready(function() {
                 for (var i = 0; i < results.length; i++) { 
                     lists.push(results[i]);
                 }
+
+                updateSporklists(lists);
             },
             error: function(error) {
                 alert("Error: " + error.code + " " + error.message);
             }
         });
-
-        console.log(lists);
-        updateSporklists(lists);
     }
 
     Parse.initialize("VXRx5pZQAr263FPLmgqY2FHEa66zEOLIuK3I2rl6", "OQkMhfc7hMHcBBkiUoClnxAfrF8gpmKaC3jNKq5V");
