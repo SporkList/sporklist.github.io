@@ -39,7 +39,7 @@ function getFriends (friendIds) {
     var friendList = [];
 	
     for(var i=0;i<5;i++) {
-        friendList[i] = resList[i].name;
+        friendList[i] = resList[i].get('name');
     }
 
     var friendListElem = document.getElementById("friend-name");
