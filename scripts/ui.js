@@ -40,9 +40,9 @@ playlistLIst.controller('PLLCtrl', function() {
 
     /* playlists -> get playlists from Parse */
     $scope.playlists = [
-      {'name':'abc'},
-      {'name':'def'},
-      {'name':'xyz'}
+      {name:'abc'},
+      {name:'def'},
+      {name:'xyz'}
     ];
 
     for(var i=0;i<playlists.length;i++) {
