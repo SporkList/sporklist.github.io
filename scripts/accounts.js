@@ -5,6 +5,7 @@ $(document).ready(function() {
     function initialize() {
         // currUser.get("name") := First and last name
         // currUser.get("picture") := String url of profile picture
+        // currUser.get("friends") := String array of friends' Facebook ids
     }
 
     Parse.initialize("VXRx5pZQAr263FPLmgqY2FHEa66zEOLIuK3I2rl6", "OQkMhfc7hMHcBBkiUoClnxAfrF8gpmKaC3jNKq5V");
@@ -35,7 +36,7 @@ $(document).ready(function() {
                     for (i = 0; i < response.data.length; i++) {
                         user.addUnique("friends", response.data[i].id);
                     }
-                    
+
                     user.save();
                 });
 
