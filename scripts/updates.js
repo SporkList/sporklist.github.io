@@ -35,12 +35,6 @@ function getFriends (friendIds) {
             }
         });
     }
-
-  scope.$apply(function () {scope.playlists = sporklists});
-}
-
-function updateSporklist(sporklist) {
-
     var friendList = [];
 	
     for(var i=0;i<5;i++) {
@@ -51,5 +45,10 @@ function updateSporklist(sporklist) {
     var scope = angular.element(friendListElem).scope();
 
     scope.$apply(function() {scope.friendList = friendList} );
+
+}
+
+function updateSporklist(sporklist) {
+
     
 }
