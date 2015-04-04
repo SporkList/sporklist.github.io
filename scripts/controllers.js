@@ -8,6 +8,7 @@
     $scope.playlists = [];
 
     $scope.onClick = function(playlist) {
+      alert("nice meme");
       var restaurant = Parse.Object.extend("Restaurant");
       var query = new Parse.Query(restaurant);
 
