@@ -46,7 +46,7 @@
         <div id="info-pane" ng-app="MainWindow">
             <input id="search-bar" type="text" placeholder="Search" value=""></input>
             <div id="content-box" ng-controller="MainCtrl">
-                <div id="login-box">
+                <div id="login-box" onclick="logIn()">
                     <div id="login-button">Log In Using Facebook</div>
                 </div>
                 <div id="my-profile-box" ng-hide="user"></div>
