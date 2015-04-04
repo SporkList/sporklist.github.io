@@ -14,9 +14,10 @@ $(document).ready(function() {
         Parse.FacebookUtils.logIn("user_likes,email", {
             success: function(user) {
                 currUser = user;
-                
+
                 FB.api("/me", function(response) {
                     user.set("name", response.name);
+                    user.save();
                     alert("Welcome, " + user.get("name") + "!");
                 });
             },
