@@ -55,6 +55,21 @@ body {
     border-radius: 8px;
 }
 
+#login-button {
+    position: absolute;
+    top:32%;
+    left: 12%;
+    width: 76%;
+    height: 36%;
+    background-color: #3B5998;
+    border-radius: 5px;
+    color: white;
+    line-height: 450%;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
 
 /* Playlist Pane */ 
 

@@ -8,6 +8,12 @@ $(document).ready(function() {
         js.src = "http://connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
+
+    FB.getLoginStatus(function(response) {
+        if (response.status == "connected") {
+            $("#login-pane").hide();
+        }
+    });
 });
 
 function logIn() {
@@ -41,6 +47,8 @@ function logIn() {
 
             updateUserPage(user);
             retrieveSporklists(user);
+
+            $("#login-pane").fadeOut(3000);
         },
         error: function(user, error) {
             alert("You must sign into Facebook to use this app");
