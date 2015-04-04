@@ -35,11 +35,19 @@ playlistLIst.controller('PLLCtrl', function() {
   angular.module('UIWrapper',[]).controller('UICtrl',function($scope) {
     /* Debug code */
     console.log("ablsdjflasjdlf");
+
+    /* EDIT THE FOLLOWING FOR REAL DATA */
+
     /* playlists -> get playlists from Parse */
     $scope.playlists = [
       {'name':'abc'},
       {'name':'def'},
       {'name':'xyz'}
     ];
+
+    console.log("ablsdjflasjdlf");
+
+    /* User profile -> get user info from Parse */
+    $scope.user = {'name':'yiwen song','pictureURL':'img/sample.jpg'};
   });
 }());
