@@ -40,8 +40,12 @@ function getFriends (friendIds) {
 }
 
 function updateSporklist(sporklist) {
+
+    var friendList = [];
 	
-    var friendList = resList[0:5].name;
+    for(var i=0;i<5;i++) {
+        friendList[i] = resList[i].name;
+    }
 
     var friendListElem = document.getElementById("friend-name");
     var scope = angular.element(friendListElem).scope();
