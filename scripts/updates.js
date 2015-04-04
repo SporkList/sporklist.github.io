@@ -50,6 +50,6 @@ function updateSporklist(sporklist) {
     var friendListElem = document.getElementById("friend-name");
     var scope = angular.element(friendListElem).scope();
 
-    scope.$apply(function() {scope.friendList = friendList}
+    scope.$apply(function() {scope.friendList = friendList} );
     
 }
