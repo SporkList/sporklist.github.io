@@ -17,7 +17,7 @@
     /* The defaults for the home page.
      * Default is user's profile
      */
-    $scope.user = true;
+    $scope.user = false;
     $scope.friend = false;
     $scope.search = false;
     $scope.map = false;
