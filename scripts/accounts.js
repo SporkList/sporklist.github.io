@@ -3,7 +3,8 @@ $(document).ready(function() {
     var currUser;
 
     function initialize() {
-
+        // currUser.get("name") := First and last name
+        // currUser.get("picture") := String url of profile picture
     }
 
     Parse.initialize("VXRx5pZQAr263FPLmgqY2FHEa66zEOLIuK3I2rl6", "OQkMhfc7hMHcBBkiUoClnxAfrF8gpmKaC3jNKq5V");
@@ -22,18 +23,20 @@ $(document).ready(function() {
                 if (!user.existed()) {
                     FB.api("/me", function(response) {
                         user.set("name", response.name);
-                        user.save();
                     });
 
                     FB.api("/me/picture?type=large", function(response) {
-                        console.log(response);
-                        // user.set("picture", response.data.)
+                        user.set("picture", response.data.url);
                     });
 
-                    initialize();
-                } else {
-                    initialize();
+                    FB.api("/me/friendlists", function(response) {
+                        console.log(response);
+                    });
+
+                    user.save();
                 }
+
+                initialize();
             },
             error: function(user, error) {
                 alert("You must sign into Facebook to use this app");
