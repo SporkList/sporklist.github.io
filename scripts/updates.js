@@ -28,6 +28,7 @@ function getFriends (friendIds) {
         query.find( {
             /* add info to some results */
             success: function (results) {
+                console.log(results);
                 resList.push(results);
             },
             error: function (error) {
