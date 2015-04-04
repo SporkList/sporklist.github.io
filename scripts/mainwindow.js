@@ -23,5 +23,7 @@
     $scope.friend = false;
     $scope.search = false;
     $scope.map = false;
+
+
   });
 }());
