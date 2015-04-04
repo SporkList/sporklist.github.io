@@ -1,6 +1,6 @@
 var playlists = [];
 
-function updateUserPage(user) {
+function updateUserPage (user) {
   /* Do something with the user */
   playlists = ['abc', 'def', 'xyz', 'fuck you michael'];
 
@@ -11,6 +11,10 @@ function updateUserPage(user) {
   console.log(scope);
 
   scope.$apply(function() {scope.playlists = playlists});
+}
+
+function updateSporklists (sporklists) {
+
 }
 
 /* This is the wrapper for the entire UI */
