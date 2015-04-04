@@ -3,7 +3,9 @@
 console.log("saldjflsdjfklsjdlf");
 
 /* This is the angular for the main window */
-angular.module('MainWindow',[]).controller('MainCtrl',function($scope) {
+var mod = angular.module('MainWindow',[]);
+
+mod.controller('MainCtrl',function($scope) {
   /* EDIT THE FOLLOWING FOR REAL DATA */
 
   console.log("b");
@@ -23,4 +25,4 @@ angular.module('MainWindow',[]).controller('MainCtrl',function($scope) {
   console.log($scope.user);
 
 
-}
+});
