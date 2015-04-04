@@ -30,6 +30,7 @@ function getFriends (friendIds) {
             console.log("success!");
             console.log(results);
             resList = results;
+            console.log(resList);
         },
         error: function (error) {
             console.log("You have no friends :( " + error);
