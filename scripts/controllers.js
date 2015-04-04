@@ -25,4 +25,8 @@
     $scope.search = false;
     $scope.map = false;
   });
+
+  app.controller('MeCtrl', function($scope) {
+    $scope.name = "";
+  });
 }());

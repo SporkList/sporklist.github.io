@@ -51,7 +51,7 @@
 
 
         <!-- Main window -->
-        <div id="info-pane" ng-app="MainWindow">
+        <div id="info-pane" ng-app="MainWindow" ng-controller="MainCtrl">
             <form id="restaurant-search">
                 <input id="search-bar" type="text" placeholder="Search Restaurants" value=""></input>
                 <input id="location-bar" type="text" placeholder="Location (Optional)" value=""></input>
@@ -65,10 +65,10 @@
                 </div> <!-- FB Login -->
 
                 <!-- Profile -->
-                <div id="my-profile-box" ng-show="user">
+                <div id="my-profile-box" ng-show="user" ng-controller="MeCtrl">
                     <div id="my-profile-header">
                         <div id="my-picture" class="profile-picture"></div>
-                        <div class="profile-info"></div>
+                        <div class="profile-info">{{name}}</div>
                     </div>
                     <div class="section-title">friends</div>
                     <div id="my-friends">
