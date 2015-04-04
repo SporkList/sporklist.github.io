@@ -32,6 +32,11 @@ playlistLIst.controller('PLLCtrl', function() {
 
 var playlists = ['abc', 'def', 'xyz'];
 
+function updateUserPage(user) {
+  /* Do something with the user */
+  playlists = [];
+}
+
 /* This is the wrapper for the entire UI */
 (function () {
   angular.module('UIWrapper',[]).controller('UICtrl',function() {
@@ -41,8 +46,3 @@ var playlists = ['abc', 'def', 'xyz'];
     this.playlists = playlists;
   });
 }());
-
-function updateUserPage(user) {
-  /* Do something with the user */
-  playlists = [];
-}
