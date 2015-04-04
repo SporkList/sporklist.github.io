@@ -19,7 +19,7 @@ function updateSporklists (sporklists) {
   var sidebarList = document.getElementById("playlists");
   var scope = angular.element(list).scope();
 
-  console.log(scope);
+  console.log(sidebarList);
   /* scope.$apply(function() {scope.playlists = sporklists}); */
   scope.$apply(function () {scope.playlists = 
     [ 'I',
