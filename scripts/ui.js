@@ -46,11 +46,11 @@ function updateUserPage(user) {
 }
 
 /* This is the wrapper for the entire UI */
-(function () {
+(function ($scope) {
   angular.module('UIWrapper',[]).controller('UICtrl',function() {
     /* EDIT THE FOLLOWING FOR REAL DATA */
 
     /* playlists -> get playlists from Parse */
-    this.playlists = playlists;
+    $scope.playlists = playlists;
   });
 }());
