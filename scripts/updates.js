@@ -23,9 +23,7 @@ function getFriends (friendIds) {
     var users = Parse.Object.extend("_User");
     var query = new Parse.Query(users);
     var resList = [ ];
-    for(id in friendIds) {
-        query.equalTo("facebook_id",friendIds[id]);
-    }
+    query.containedIn("facebook_id",friendsIds);
     query.find( {
         /* add info to some results */
         success: function (results) {
