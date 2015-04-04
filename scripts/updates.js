@@ -1,4 +1,5 @@
 function updateUserPage (user) {
+	console.log(user);
 }
 
 function updateSporklists (sporklists, position) {
