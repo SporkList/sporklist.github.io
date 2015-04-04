@@ -16,7 +16,7 @@
       query.limit(1000);
 
       navigator.geolocation.getCurrentPosition(function(location) {
-          // query.withinMiles("location", new Parse.GeoPoint(location.coords.latitude, location.coords.longitude), 3);
+          query.withinMiles("location", new Parse.GeoPoint(location.coords.latitude, location.coords.longitude), 5);
           query.find({
             success: function(results) {
               list = []
