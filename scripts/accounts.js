@@ -11,51 +11,49 @@ $(document).ready(function() {
 });
 
 function logIn() {
-    window.fbAsyncInit = function() {
-        Parse.FacebookUtils.init({
-            appId      : '789662264445561',
-            cookie     : true,
-            xfbml      : true,
-            version    : 'v2.3'
-        });
+    Parse.FacebookUtils.init({
+        appId      : '789662264445561',
+        cookie     : true,
+        xfbml      : true,
+        version    : 'v2.3'
+    });
 
-        FB.getLoginStatus(function(response) {
-            if (response.status == "connected") {
-                $("#login-pane").hide();
-            } else {
-                Parse.FacebookUtils.logIn("user_friends", {
-                    success: function(user) {
-                        FB.api("/me", function(response) {
-                            user.set("name", response.name);
-                            user.set("facebook_id", response.id);
-                            user.save();
-                        });
+    FB.getLoginStatus(function(response) {
+        if (response.status == "connected") {
+            $("#login-pane").hide();
+        } else {
+            Parse.FacebookUtils.logIn("user_friends", {
+                success: function(user) {
+                    FB.api("/me", function(response) {
+                        user.set("name", response.name);
+                        user.set("facebook_id", response.id);
+                        user.save();
+                    });
 
-                        FB.api("/me/picture?type=large", function(response) {
-                            user.set("picture", response.data.url);
-                            user.save();
-                        });
+                    FB.api("/me/picture?type=large", function(response) {
+                        user.set("picture", response.data.url);
+                        user.save();
+                    });
 
-                        FB.api("/me/friends", function(response) {
-                            for (i = 0; i < response.data.length; i++) {
-                                user.addUnique("friends", response.data[i].id);
-                            }
+                    FB.api("/me/friends", function(response) {
+                        for (i = 0; i < response.data.length; i++) {
+                            user.addUnique("friends", response.data[i].id);
+                        }
 
-                            user.save();
-                        });
+                        user.save();
+                    });
 
-                        updateUserPage(user);
-                        retrieveSporklists(user);
+                    updateUserPage(user);
+                    retrieveSporklists(user);
 
-                        $("#login-pane").fadeOut(1000);
-                    },
-                    error: function(user, error) {
-                        alert("You must sign into Facebook to use this app");
-                    }
-                });
-            }   
-        });
-    }
+                    $("#login-pane").fadeOut(1000);
+                },
+                error: function(user, error) {
+                    alert("You must sign into Facebook to use this app");
+                }
+            });
+        }   
+    });
 };
 
 function retrieveSporklists(user) {
