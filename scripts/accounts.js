@@ -14,7 +14,6 @@ function logIn() {
 
         Parse.FacebookUtils.init({
           appId      : '789662264445561',
-          status     : true,
           cookie     : true,
           xfbml      : true,
           version    : 'v2.3'
