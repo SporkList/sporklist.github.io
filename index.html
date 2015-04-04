@@ -31,6 +31,7 @@
     </head>
 
     <body>
+        <!-- Playlist sidebar -->
         <div id="playlists-pane" ng-app="Playlist">
             <div id="logo-header">
                 <img id="logo-img" src="images/icon_light.png" width="60px" height="60px" />
@@ -43,17 +44,24 @@
             </div>
             <div id="new-playlist-button">new sporklist +</div>
         </div>
+        <!-- End of sidebar -->
+
+
+
+
+        <!-- Main window -->
         <div id="info-pane" ng-app="MainWindow">
             <input id="search-bar" type="text" placeholder="Search Restaurants" value=""></input>
             <div id="content-box">
+
+                <!-- FB Login -->
                 <div id="login-box" onclick="logIn()">
                     <div id="login-button">Log In Using Facebook</div>
-                </div>
-                <!--
-                <div id="my-profile-box">
-                -->
-                <div  ng-controller="MainCtrl as x">
-                  <div ng-show="user">
+                </div> <!-- FB Login -->
+
+                <!-- Profile -->
+                <div id="my-profile-box" ng-controller="MainCtrl as x">
+                  <div ng-show="x.user">
                       <img class="profile-picture" src="" />
                       <div class="profile-info">
                         {{x.user}}
@@ -63,14 +71,20 @@
                       <div class="section-title">My Friends</div>
                       <div id="my-friends"></div>
                   </div>
-                </div>
+                </div> <!-- End of Profile -->
+
+                <!-- Profile of a friend -->
                 <div id="friend-profile-box">
-                    
-                </div>
+                </div> <!-- End of friend profile -->
+
+                <!-- Search results -->
                 <div id="restaurant-search-box">
-                    
                 </div>
-            </div>
+                <!-- End of search results -->
+
+
+            </div> <!-- End of content box -->
         </div>
+        <!-- End of main window -->
     </body>
 </html>
