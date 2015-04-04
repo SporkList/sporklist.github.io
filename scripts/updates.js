@@ -30,13 +30,14 @@ function getFriends (friendIds) {
     query.find( {
         /* add info to some results */
         success: function (results) {
-            console.log(results);
+            console.log("success!" + results);
             resList.push(results);
         },
         error: function (error) {
             console.log("You have no friends :( " + error);
         }
     });
+
     var friendList = [];
 	
     for(var i=0;i<5;i++) {
