@@ -57,7 +57,7 @@ $(document).ready(function() {
 
                     user.save();
                 });
-
+                console.log(currUser);
                 updateUserPage(currUser);
                 retrieveSporklists();
             },
