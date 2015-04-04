@@ -6,7 +6,7 @@ $(document).ready(function() {
         var sporklist = Parse.Object.extend("Sporklist");
         var query = new Parse.Query(sporklist);
 
-        query.equalTo("author", currUser.id);
+        query.equalTo("author", currUser.getUsername());
         query.limit(1000);
 
         var lists = [];
@@ -56,7 +56,7 @@ $(document).ready(function() {
 
                     user.save();
                 });
-                
+
                 updateUserPage(currUser);
                 retrieveSporklists();
             },
