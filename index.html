@@ -16,7 +16,7 @@
             <div id="playlist-header">Playlists</div>
             <div id="playlists" ng-controller="UICtrl as cont">
                 <!-- List of playlists -->
-                <div class="playlist" ng-repeat="c in cont.playlists">{{c.name}}</div>
+                <div class="playlist" ng-repeat="c in cont.playlists">{{cont.playlists[c]}}</div>
                 <!-- REPEATS
                   <div class="playlist">abc</div>
                   <div class="playlist">xyz</div>
