@@ -11,11 +11,48 @@ body {
 /* Playlist Pane */ 
 
 #playlists-pane {
+    position: relative;
     display: block;
     width: 320px;
-    height: 100%;
     float: left;
     border-right: 1px solid #A81F31;
+}
+
+#logo-header {
+    display: block;
+    width: 100%;
+    height: 72px;
+    background-color: #A81F31;
+}
+
+#playlist-header {
+    width: 100%;
+    height: 72px;
+    font: 16px sans-serif bold;
+    border-bottom: 2px solid #121212;
+}
+
+#playlists {
+    width: 100%;
+    height: 200px;
+    overflow-y: auto;
+}
+
+.playlist {
+    display: block;
+    width: 100%;
+    height: 60px;
+    font: 14px sans-serif;
+    border-top: 1px solid #A81F31;
+}
+
+#new-playlist-button {
+    display: block;
+    width: 100%;
+    height: 60px;
+    color: #FFE7D6;
+    font: 16px sans-serif bold;
+    background-color: #A81F31;
 }
 
 /* Info Pane */
@@ -23,6 +60,5 @@ body {
 #info-pane {
     display: block;
     width: 100%;
-    height: 100%;
     float: right;
 }
