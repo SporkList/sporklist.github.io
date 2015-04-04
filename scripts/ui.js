@@ -36,9 +36,12 @@ function updateUserPage(user) {
   /* Do something with the user */
   playlists = ['abc', 'def', 'xyz', 'fuck you michael'];
 
+  console.log(list);
+  console.log(scope);
+
   var list = document.getElementById("playlists");
   var scope = angular.element(list).scope();
-  scope.$apply(function() {scope.playlists = playlists});
+  scope.$apply(function() {scope.playlists = []});
 }
 
 /* This is the wrapper for the entire UI */
