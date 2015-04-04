@@ -13,5 +13,13 @@
       console.log(plist);
     }
     */
+
+    /* The defaults for the home page.
+     * Default is user's profile
+     */
+    $scope.user = true;
+    $scope.friend = false;
+    $scope.search = false;
+    $scope.map = false;
   });
 }());
