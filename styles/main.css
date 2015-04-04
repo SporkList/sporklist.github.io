@@ -190,7 +190,7 @@ body {
     margin: 128px auto;
 }
 
-img {
+.rounded_image {
     background-repeat: no-repeat;
     background-position: 50%;
     border-radius: 50%;
