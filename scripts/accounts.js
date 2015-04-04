@@ -2,10 +2,27 @@ $(document).ready(function() {
 
     var currUser;
 
-    function initialize() {
-        // currUser.get("name") := First and last name
-        // currUser.get("picture") := String url of profile picture
-        // currUser.get("friends") := String array of friends' Facebook ids
+    function retrieveSporklists() {
+        var sporklist = Parse.Object.extend("Sporklist");
+        var query = new Parse.query(sporklist);
+
+        query.equalTo("author", currUser.id());
+        query.limit(1000);
+
+        lists = []
+        query.find({
+            success: function(results) {
+                // Do something with the returned Parse.Object values
+                for (var i = 0; i < results.length; i++) { 
+                    lists.push(results[i]);
+                }
+            },
+            error: function(error) {
+                alert("Error: " + error.code + " " + error.message);
+            }
+        });
+
+        updateSporklists(lists);
     }
 
     Parse.initialize("VXRx5pZQAr263FPLmgqY2FHEa66zEOLIuK3I2rl6", "OQkMhfc7hMHcBBkiUoClnxAfrF8gpmKaC3jNKq5V");
@@ -40,6 +57,7 @@ $(document).ready(function() {
                     user.save();
                 });
 
+                retrieveSporklists();
                 updateUserPage(currUser);
             },
             error: function(user, error) {
