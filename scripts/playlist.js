@@ -1,3 +1,5 @@
+var position;
+
 function updateUserPage (user) {
   /* Do something with the user
    * OLD TEST CODE

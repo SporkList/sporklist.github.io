@@ -39,11 +39,12 @@ function logIn() {
                 user.save();
             });
 
-            navigator.geolocation.getCurrentPosition(function(position) {
-                retrieveSporklists(user, position);
+            navigator.geolocation.getCurrentPosition(function(location) {
+                position = position
             });
 
             updateUserPage(user);
+            retrieveSporklists(user);
 
             $("#login-box").fadeOut(700);
         },
