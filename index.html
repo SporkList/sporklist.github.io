@@ -44,14 +44,26 @@
             <div id="new-playlist-button">new sporklist +</div>
         </div>
         <div id="info-pane" ng-app="MainWindow">
-            <input id="search-bar" type="text" placeholder="Search" value=""></input>
+            <input id="search-bar" type="text" placeholder="Search Restaurants" value=""></input>
             <div id="content-box" ng-controller="MainCtrl">
                 <div id="login-box" onclick="logIn()">
                     <div id="login-button">Log In Using Facebook</div>
                 </div>
-                <div id="my-profile-box" ng-hide="user"></div>
-                <div id="friend-profile-box" ng-hide="friend"></div>
-                <div id="restaurant-search-box" ng-hide="search"></div>
+                <div id="my-profile-box" ng-hide="user">
+                    <img class="profile-picture" src="" />
+                    <div class="profile-info">
+                        Stuff<br>
+                        Stuff
+                    </div>
+                    <div class="section-title">My Friends</div>
+                    <div id="my-friends"></div>
+                </div>
+                <div id="friend-profile-box" ng-hide="friend">
+                    
+                </div>
+                <div id="restaurant-search-box" ng-hide="search">
+                    
+                </div>
             </div>
         </div>
     </body>
