@@ -1,4 +1,4 @@
-<html ng-app>
+<html ng-app="UIWrapper">
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="styles/main.css">
@@ -17,7 +17,7 @@
                 <p id="logo-text">sporklist</p>
             </div>
             <div id="playlist-header">Playlists</div>
-            <div id="playlists" ng-app="UIWrapper" ng-controller="UICtrl as cont">
+            <div id="playlists" ng-controller="UICtrl as cont">
                 <!-- List of playlists -->
                 <div class="playlist" ng-repeat="c in cont.playlists">{{c.name}}</div>
             </div>
