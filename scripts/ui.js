@@ -45,8 +45,8 @@ playlistLIst.controller('PLLCtrl', function() {
       {'name':'xyz'}
     ];
 
-    for(k in playlists) {
-      console.log(k.name);
+    for(int i=0;i<playlists.length;i++) {
+      console.log(playlists[i].name);
     }
 
     /* User profile -> get user info from Parse */
