@@ -1,5 +1,3 @@
-var playlists = [];
-
 function updateUserPage (user) {
   /* Do something with the user
    * OLD TEST CODE
@@ -29,11 +27,13 @@ function updateSporklists (sporklists) {
     /* EDIT THE FOLLOWING FOR REAL DATA */
 
     /* playlists -> get playlists from Parse */
-    $scope.playlists = playlists;
+    $scope.playlists = [];
 
-    $scope.onClick = function(plist) {
-      alert("nice meme");
-      console.log(plist);
+    $scope.onClick = function(playlist) {
+      var restaurant = Parse.Object.extend("Restaurant");
+      var query = new Parse.Query(restaurant);
+
+      query.equalTo("sporklists", playlist.id);
     }
   });
 }());
