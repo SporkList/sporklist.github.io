@@ -31,7 +31,6 @@ function getFriends (friendIds) {
         success: function (results) {
             console.log("success!");
             console.log(results);
-            resList.push(results);
         },
         error: function (error) {
             console.log("You have no friends :( " + error);
@@ -41,7 +40,7 @@ function getFriends (friendIds) {
     var friendList = [];
 	
     for(var i=0;i<5;i++) {
-        friendList[i] = resList[i].get('name');
+        friendList[i] = results[i].get('name');
     }
 
     var friendListElem = document.getElementById("friend-name");
