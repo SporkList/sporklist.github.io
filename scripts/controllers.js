@@ -25,7 +25,6 @@
                 list.push(results[i]);
               }
 
-              console.log(list);
               updateSporklist(list);
             },
             error: function(error) {
