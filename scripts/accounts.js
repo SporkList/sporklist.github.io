@@ -11,7 +11,7 @@ $(document).ready(function() {
 });
 
 function logIn() {
-    window.fbAsyncInit = function() {
+
         Parse.FacebookUtils.init({
           appId      : '789662264445561',
           status     : true,
@@ -48,7 +48,7 @@ function logIn() {
                 alert("You must sign into Facebook to use this app");
             }
         });
-    }
+
 };
 
 function retrieveSporklists(user) {
