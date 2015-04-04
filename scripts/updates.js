@@ -24,7 +24,7 @@ function getFriends (friendIds) {
     var query = new Parse.Query(users);
     var resList = [ ];
     for(id in friendIds) {
-        query.equalTo("facebook_id",friendIds(id));
+        query.equalTo("facebook_id",friendIds[id]);
     }
     query.find( {
         /* add info to some results */
