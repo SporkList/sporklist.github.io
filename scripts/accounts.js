@@ -25,7 +25,7 @@ $(document).ready(function() {
                         user.save();
                     });
 
-                    FB.api("/me/picture", function(response) {
+                    FB.api("/me/picture?type=large", function(response) {
                         console.log(response);
                         // user.set("picture", response.data.)
                     });
