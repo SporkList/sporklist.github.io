@@ -21,6 +21,7 @@ $(document).ready(function() {
                 currUser = user;
 
                 FB.api("/me", function(response) {
+                    console.log(reponse);
                     user.set("name", response.name);
                     user.save();
                 });
@@ -34,10 +35,6 @@ $(document).ready(function() {
                     console.log("oh");
                     console.log(response);
                     user.save();
-                });
-
-                FB.api("/10205901503874063", function(response) {
-                    console.log(response.name);
                 });
 
                 initialize();
