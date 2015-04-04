@@ -40,7 +40,7 @@ $(document).ready(function() {
                     user.save();
                 });
 
-                initialize();
+                updateUserPage(currUser);
             },
             error: function(user, error) {
                 alert("You must sign into Facebook to use this app");
