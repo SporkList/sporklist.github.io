@@ -23,6 +23,11 @@ $(document).ready(function() {
                 alert("Error: " + error.code + " " + error.message);
             }
         });
+
+
+        navigator.geolocation.getCurrentPosition(function(position) {
+
+        });
     }
 
     Parse.initialize("VXRx5pZQAr263FPLmgqY2FHEa66zEOLIuK3I2rl6", "OQkMhfc7hMHcBBkiUoClnxAfrF8gpmKaC3jNKq5V");
