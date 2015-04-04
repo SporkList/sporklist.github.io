@@ -35,31 +35,6 @@ body {
     height: 100%;
 }
 
-/* Login Screen */
-
-#login-pane {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    z-index: 5000;
-}
-
-#login-box {
-    position: absolute;
-    top: 35%;
-    left: 35%;
-    width: 30%;
-    height: 15%;
-    color: white;
-    background-color: #3B5998;
-    font-size: 24px;
-    border-radius: 8px;
-    text-align: center;
-    cursor: pointer;
-}
-
-
 /* Playlist Pane */ 
 
 #playlists-pane {
@@ -177,7 +152,10 @@ body {
     top: 84px;
     left: 0;
     bottom: 0;
+    overflow-y: auto;
 }
+
+/* Social Box */
 
 #my-profile-box {
     
@@ -187,6 +165,27 @@ body {
     
 }
 
-#search-results-box {
+/* Restaurant Search */
+
+#restaurant-search-box {
     
+}
+
+/* Login Pane */
+
+#login-box {
+    width: 100%;
+    text-align: center;
+}
+
+#login-button {
+    padding: 16px;
+    color: white;
+    background-color: #3B5998;
+    font-size: 24px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    width: 240px;
+    margin: 128px auto;
 }

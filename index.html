@@ -31,11 +31,6 @@
     </head>
 
     <body>
-        <div id="login-pane">
-            <div id="login-box" onclick="logIn()">
-                Log In Using Facebook
-            </div>
-        </div>
         <div id="playlists-pane" ng-app="Playlist">
             <div id="logo-header">
                 <img id="logo-img" src="images/icon_light.png" width="60px" height="60px" />
@@ -51,12 +46,12 @@
         <div id="info-pane" ng-app="MainWindow">
             <input id="search-bar" type="text" placeholder="Search" value=""></input>
             <div id="content-box" ng-controller="MainCtrl">
-                <div id="user-profile" ng-hide="user"> </div>
-                <div id="friend-profile" ng-hide="friend"> </div>
-
-                <!-- These probably have to be repeates too -->
-                <div id="search-result" ng-hide="search"> </div>
-                <div id="map-expand" ng-hide="map"> </div>
+                <div id="login-box">
+                    <div id="login-button">Log In Using Facebook</div>
+                </div>
+                <div id="my-profile-box" ng-hide="user"></div>
+                <div id="friend-profile-box" ng-hide="friend"></div>
+                <div id="restaurant-search-box" ng-hide="search"></div>
             </div>
         </div>
     </body>
