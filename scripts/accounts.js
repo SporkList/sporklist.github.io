@@ -46,11 +46,11 @@ function logIn() {
             updateUserPage(user);
             retrieveSporklists(user);
 
-            $("#login-box").fadeOut(700);
-
-            mainWindow = document.getElementById("info-pane");
-            scope = angular.element(mainWindow).scope();
-            scope.$apply(function() {scope.user = true});
+            $("#login-box").fadeOut(700, function() {
+                mainWindow = document.getElementById("info-pane");
+                scope = angular.element(mainWindow).scope();
+                scope.$apply(function() {scope.user = true});
+            });
         },
         error: function(user, error) {
             alert("You must sign into Facebook to use this app");
