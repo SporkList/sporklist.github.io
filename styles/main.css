@@ -50,24 +50,14 @@ body {
     top: 35%;
     left: 35%;
     width: 30%;
-    height: 30%;
-    background-color: #FFF;
-    border-radius: 8px;
-}
-
-#login-button {
-    position: absolute;
-    top:32%;
-    left: 12%;
-    width: 76%;
-    height: 36%;
-    background-color: #3B5998;
-    border-radius: 5px;
+    height: 15%;
     color: white;
-    line-height: 450%;
+    background-color: #3B5998;
+    font-size: 24px;
+    border-radius: 8px;
     text-align: center;
+    line-height: 100%;
     vertical-align: middle;
-    cursor: pointer;
 }
 
 

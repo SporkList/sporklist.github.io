@@ -1,6 +1,13 @@
 $(document).ready(function() {
     Parse.initialize("VXRx5pZQAr263FPLmgqY2FHEa66zEOLIuK3I2rl6", "OQkMhfc7hMHcBBkiUoClnxAfrF8gpmKaC3jNKq5V");
 
+    Parse.FacebookUtils.init({
+      appId      : '789662264445561',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.3'
+    });
+
     (function(d, s, id){
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) {return;}
@@ -17,13 +24,6 @@ $(document).ready(function() {
 });
 
 function logIn() {
-    Parse.FacebookUtils.init({
-      appId      : '789662264445561',
-      cookie     : true,
-      xfbml      : true,
-      version    : 'v2.3'
-    });
-
     Parse.FacebookUtils.logIn("user_friends", {
         success: function(user) {
             FB.api("/me", function(response) {
@@ -48,7 +48,7 @@ function logIn() {
             updateUserPage(user);
             retrieveSporklists(user);
 
-            $("#login-pane").fadeOut(3000);
+            $("#login-pane").fadeOut(1000);
         },
         error: function(user, error) {
             alert("You must sign into Facebook to use this app");
