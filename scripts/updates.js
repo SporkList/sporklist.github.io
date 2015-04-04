@@ -26,17 +26,17 @@ function getFriends (friendIds) {
     var resList = [ ];
     for(id in friendIds) {
         query.equalTo("facebook_id",id);
-        query.find( {
-            /* add info to some results */
-            success: function (results) {
-                console.log(results);
-                resList.push(results);
-            },
-            error: function (error) {
-                console.log("You have no friends :( " + error);
-            }
-        });
     }
+    query.find( {
+        /* add info to some results */
+        success: function (results) {
+            console.log(results);
+            resList.push(results);
+        },
+        error: function (error) {
+            console.log("You have no friends :( " + error);
+        }
+    });
     var friendList = [];
 	
     for(var i=0;i<5;i++) {
