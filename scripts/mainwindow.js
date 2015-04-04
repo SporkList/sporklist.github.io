@@ -1,3 +1,5 @@
+/* Hides 'my-profile-box by default */
+
 /* This is the angular for the main window */
 (function () {
   angular.module('MainWindow',[]).controller('MainCtrl',function($scope) {
