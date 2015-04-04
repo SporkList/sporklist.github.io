@@ -57,8 +57,8 @@ $(document).ready(function() {
                     user.save();
                 });
 
-                retrieveSporklists();
                 updateUserPage(currUser);
+                retrieveSporklists();
             },
             error: function(user, error) {
                 alert("You must sign into Facebook to use this app");
