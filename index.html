@@ -45,11 +45,13 @@
         </div>
         <div id="info-pane" ng-app="MainWindow">
             <input id="search-bar" type="text" placeholder="Search" value=""></input>
-            <div id="content-box">
-                <div id="user-profile"> </div>
-                <div id="friend-profile"> </div>
-                <div id="search-result"> </div>
-                <div id="map-expand"> </div>
+            <div id="content-box" ng-controller="MainCtrl">
+                <div id="user-profile" ng-hide="user"> </div>
+                <div id="friend-profile" ng-hide="friend"> </div>
+
+                <!-- These probably have to be repeates too -->
+                <div id="search-result" ng-hide="search"> </div>
+                <div id="map-expand" ng-hide="map"> </div>
             </div>
         </div>
     </body>
