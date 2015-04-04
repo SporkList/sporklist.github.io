@@ -47,5 +47,6 @@
 
   app.controller('MeCtrl', function($scope) {
     $scope.name = "";
+    $scope.friendList = [];
   });
 }());

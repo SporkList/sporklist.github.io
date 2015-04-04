@@ -65,7 +65,7 @@
                 </div> <!-- FB Login -->
 
                 <!-- Profile -->
-                <div id="my-profile-box" ng-show="user" ng-controller="MeCtrl">
+                <div id="my-profile-box" ng-show="user" ng-controller="MeCtrl as sc">
                     <div id="my-profile-header">
                         <div id="my-picture" class="profile-picture"></div>
                         <div class="profile-info">{{name}}</div>
@@ -73,7 +73,9 @@
                     <div class="section-title">friends</div>
                     <div id="my-friends">
                         <div id="friend-picture" class="profile-picture"></div>
-                        <div class="friend-name"></div>
+                        <div class="friend-name" ng-repeat="fName in sc.friendList">
+                            {{fName}}
+                        </div>
                     </div>
                 </div> <!-- End of Profile -->
 
