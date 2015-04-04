@@ -16,9 +16,10 @@
                 <img id="logo-img" src="images/icon_light.png" width="60px" height="60px" />
                 <p id="logo-text">sporklist</p>
             </div>
-            <div id="playlist-header">Playlists</div>
+            <div id="playlist-header">My Sporklists</div>
             <div id="playlists" ng-controller="UICtrl as cont">
                 <!-- List of playlists -->
+                <div class="playlist" ng-repeat="pl in playlists">{{pl}}</div>
             </div>
             <div id="new-playlist-button">New Playlist +</div>
         </div>
@@ -26,7 +27,6 @@
             <input id="search-bar" type="text" placeholder="Search" value=""></input>
             <div id="content-box">
             </div>
-          
         </div>
     </body>
 </html>
