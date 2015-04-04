@@ -16,7 +16,7 @@ $(document).ready(function() {
           version    : 'v2.3'
         });
 
-        Parse.FacebookUtils.logIn("user_likes,email", {
+        Parse.FacebookUtils.logIn("user_friends", {
             success: function(user) {
                 currUser = user;
 
