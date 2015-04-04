@@ -37,6 +37,8 @@ function getFriends (friendIds) {
         }
     });
 
+    console.log(resList);
+
     var friendList = [];
 	
     for(var i=0;i<5;i++) {
