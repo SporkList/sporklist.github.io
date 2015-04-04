@@ -22,6 +22,7 @@ $(document).ready(function() {
             }
         });
 
+        console.log(lists);
         updateSporklists(lists);
     }
 
