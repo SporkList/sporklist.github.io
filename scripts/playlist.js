@@ -18,7 +18,7 @@ function updateUserPage (user) {
 function updateSporklists (sporklists) {
   var sidebarList = document.getElementById("playlists");
   var scope = angular.element(list).scope();
-  scope.$apply(function() {scope.playlists = sporklists});
+  /* scope.$apply(function() {scope.playlists = sporklists}); */
 }
 
 /* This is the wrapper for the entire UI */
