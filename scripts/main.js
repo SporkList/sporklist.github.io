@@ -1,3 +1,5 @@
+var location;
+
 function setPlaylistHeight() {
     var sum = 0;
     $("#playlists-pane").children().each(function() {
@@ -15,6 +17,10 @@ function setPlaylistHeight() {
 
 $(document).ready(function () {
     setPlaylistHeight();
+
+    navigator.geolocation.getCurrentPosition(function(position) {
+        location = position;
+    });
 });
 
 $(window).resize(function() {
