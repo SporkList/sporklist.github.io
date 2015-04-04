@@ -49,7 +49,7 @@ function updateSporklists (sporklists, position) {
 
 /* This is the angular for the sidebar */
 (function () {
-  angular.module('MainWindow',[]).controller('MainCtrl',function($scope) {
+  angular.module('MWindow',[]).controller('MCtrl',function($scope) {
     /* EDIT THE FOLLOWING FOR REAL DATA */
 
     console.log("working #2");
