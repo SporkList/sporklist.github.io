@@ -9,7 +9,7 @@ function updateUserPage (user) {
 	scope.$apply(function() {scope.name = name});
 	$("#my-picture").css("background-image", "url(" + picUrl + ")");
 
-
+    getFriends(friends);
 }
 
 function updateSporklists (sporklists, position) {
