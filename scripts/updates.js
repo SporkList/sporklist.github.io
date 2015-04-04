@@ -22,13 +22,14 @@ function updateSporklists (sporklists, position) {
 function getFriends (friendIds) {
     var users = Parse.Object.extend("_User");
     var query = new Parse.Query(users);
-    var resList = [ ];
+    var resList;
     query.containedIn("facebook_id",friendIds);
     query.find( {
         /* add info to some results */
         success: function (results) {
             console.log("success!");
             console.log(results);
+            resList = results;
         },
         error: function (error) {
             console.log("You have no friends :( " + error);
@@ -38,7 +39,7 @@ function getFriends (friendIds) {
     var friendList = [];
 	
     for(var i=0;i<5;i++) {
-        friendList[i] = results[i].get('name');
+        friendList[i] = resList[i].get('name');
     }
 
     var friendListElem = document.getElementById("friend-name");
