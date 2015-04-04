@@ -26,7 +26,6 @@ function updateSporklists (sporklists) {
       'love',
       'OS',
       'and',
-      'I',
       'Don\'t',
       'Care',
       'Who',
