@@ -46,8 +46,8 @@ function updateUserPage(user) {
 }
 
 /* This is the wrapper for the entire UI */
-(function ($scope) {
-  angular.module('UIWrapper',[]).controller('UICtrl',function() {
+(function () {
+  angular.module('UIWrapper',[]).controller('UICtrl',function($scope) {
     /* EDIT THE FOLLOWING FOR REAL DATA */
 
     /* playlists -> get playlists from Parse */
