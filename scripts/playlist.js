@@ -13,7 +13,7 @@ function updateUserPage (user) {
   */
 }
 
-function updateSporklists (sporklists) {
+function updateSporklists (sporklists, position) {
   var sidebarList = document.getElementById("playlists");
   var scope = angular.element(sidebarList).scope();
 

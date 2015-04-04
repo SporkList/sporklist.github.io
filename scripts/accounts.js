@@ -40,11 +40,10 @@ function logIn() {
             });
 
             navigator.geolocation.getCurrentPosition(function(position) {
-                console.log(position);
+                retrieveSporklists(user, position);
             });
 
             updateUserPage(user);
-            retrieveSporklists(user);
 
             $("#login-box").fadeOut(700);
         },
