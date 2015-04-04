@@ -30,18 +30,32 @@ playlistLIst.controller('PLLCtrl', function() {
 });
 */
 
-/* This is the wrapper for the entire UI */
-(function () {
-  angular.module('UIWrapper',[]).controller('UICtrl',function() {
-    /* Debug code */
-    console.log("ablsdjflasjdlf");
 
-    /* EDIT THE FOLLOWING FOR REAL DATA */
 
-    /* playlists -> get playlists from Parse */
-    this.playlists = ['abc', 'def', 'xyz'];
+function updateUserPage(user) {
+  /* Do something with the user */
+  
+  /* This is the wrapper for the entire UI */
+  (function () {
+    angular.module('UIWrapper',[]).controller('UICtrl',function() {
+      /* Debug code */
+      console.log("wrapper got called");
+  
+      /* EDIT THE FOLLOWING FOR REAL DATA */
+  
+      /* playlists -> get playlists from Parse */
+      this.playlists = ['abc', 'def', 'xyz'];
 
-    /* User profile -> get user info from Parse */
-    // $scope.user = {'name':'yiwen song','pictureURL':'img/sample.jpg'};
-  });
-}());
+      /* Get user's friends */
+      this.friends = currUser.get("friends");
+
+      /* Get user's name */
+      this.name = currUser.get("name");
+
+      /* Get user's picture */
+      this.picture = currUser.get("picture");
+  
+    });
+  }());
+  
+}
