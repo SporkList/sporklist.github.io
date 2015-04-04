@@ -32,24 +32,16 @@ playlistLIst.controller('PLLCtrl', function() {
 
 /* This is the wrapper for the entire UI */
 (function () {
-  angular.module('UIWrapper',[]).controller('UICtrl',function($scope) {
+  angular.module('UIWrapper',[]).controller('UICtrl',function() {
     /* Debug code */
     console.log("ablsdjflasjdlf");
 
     /* EDIT THE FOLLOWING FOR REAL DATA */
 
     /* playlists -> get playlists from Parse */
-    $scope.playlists = [
-      {name:'abc'},
-      {name:'def'},
-      {name:'xyz'}
-    ];
-
-    for(var i=0;i<$scope.playlists.length;i++) {
-      console.log($scope.playlists[i].name);
-    }
+    this.playlists = ['abc', 'def', 'xyz'];
 
     /* User profile -> get user info from Parse */
-    $scope.user = {'name':'yiwen song','pictureURL':'img/sample.jpg'};
+    // $scope.user = {'name':'yiwen song','pictureURL':'img/sample.jpg'};
   });
 }());
