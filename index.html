@@ -35,15 +35,17 @@
 
     <body>
         <!-- Playlist sidebar -->
-        <div id="playlists-pane" ng-app="Playlist">
+        <div id="playlists-pane" ng-app="MWindow">
             <div id="logo-header">
                 <img id="logo-img" src="images/icon_light.png" width="60px" height="60px" />
                 <p id="logo-text">sporklist</p>
             </div>
             <div id="playlist-header">my sporklists</div>
-            <div id="playlists" ng-controller="PLCtrl as cont">
-                <!-- List of playlists -->
+            <div id="playlists" ng-controller="MCtrl as cont">
+                <!-- List of playlists
                 <div class="playlist" ng-repeat="plist in playlists" ng-click="onClick(plist)">{{plist.get("name")}}</div>
+                -->
+                <div ng-show="user"> DOES IT WORK??? </div>
             </div>
             <div id="new-playlist-button">new sporklist +</div>
         </div>
