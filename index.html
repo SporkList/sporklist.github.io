@@ -32,6 +32,7 @@
     </head>
 
     <body>
+        <!-- Playlist sidebar -->
         <div id="playlists-pane" ng-app="Playlist">
             <div id="logo-header">
                 <img id="logo-img" src="images/icon_light.png" width="60px" height="60px" />
@@ -44,36 +45,51 @@
             </div>
             <div id="new-playlist-button">new sporklist +</div>
         </div>
+        <!-- End of sidebar -->
+
+
+
+
+        <!-- Main window -->
         <div id="info-pane" ng-app="MainWindow">
             <form id="restaurant-search">
                 <input id="search-bar" type="text" placeholder="Search Restaurants" value=""></input>
                 <input id="location-bar" type="text" placeholder="Location (Optional)" value=""></input>
                 <input id="search-button" type="image" src="images/search.png"></input>
             </form>
-            <div id="content-box" ng-controller="MainCtrl as layout">
+            <div id="content-box">
+
+                <!-- FB Login -->
                 <div id="login-box" onclick="logIn()">
                     <div id="login-button">Log In Using Facebook</div>
-                </div>
-                <div ng-hide="!user">
-                    <img class="profile-picture" src="" />
-                    <div class="profile-info">
-                    </div>
-                    <div class="section-title">My Friends</div>
-                    <div id="my-friends"></div>
-                </div>
+                </div> <!-- FB Login -->
+
+                <!-- Profile -->
+                <div id="my-profile-box" ng-controller="MainCtrl as x">
+                  <div ng-show="x.user">
+                      <img class="profile-picture" src="" />
+                      <div class="profile-info">
+                        {{x.user}}
+                        <br />
+                        {{x.friend}}
+                      </div>
+                      <div class="section-title">My Friends</div>
+                      <div id="my-friends"></div>
+                  </div>
+                </div> <!-- End of Profile -->
+
+                <!-- Profile of a friend -->
                 <div id="friend-profile-box">
-                    
+                </div> <!-- End of friend profile -->
+
+                <!-- Search results -->
+                <div id="restaurant-search-box">
                 </div>
-                <div id="restaurant-search-box" ng-hide="search">
-               <!-- <div class="restaurant-result">
-                        <div class="restaurant-info">
-                            <img class="restaurant-picture" src="" />
-                            <p class="restaurant-title">Penis Place</p>
-                            <p class="restaurant-text">LOL</p>
-                        </div>
-                    </div> -->
-                </div>
-            </div>
+                <!-- End of search results -->
+
+
+            </div> <!-- End of content box -->
         </div>
+        <!-- End of main window -->
     </body>
 </html>
