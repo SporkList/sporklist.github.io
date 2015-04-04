@@ -23,4 +23,4 @@ angular.module('MainWindow',[]).controller('MainCtrl',function($scope) {
   console.log($scope.user);
 
 
-});
+}
