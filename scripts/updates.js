@@ -20,6 +20,7 @@ function updateSporklists (sporklists, position) {
 }
 
 function getFriends (friendIds) {
+    console.log(friendIds);
     var users = Parse.Object.extend("_User");
     var query = new Parse.Query(users);
     var resList = [ ];
