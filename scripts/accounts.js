@@ -22,17 +22,19 @@ $(document).ready(function() {
 
                 FB.api("/me", function(response) {
                     user.set("name", response.name);
+                    user.save();
                 });
 
                 FB.api("/me/picture?type=large", function(response) {
                     user.set("picture", response.data.url);
+                    user.save();
                 });
 
                 FB.api("/me/friendlists", function(response) {
                     console.log(response.data);
+                    user.save();
                 });
 
-                user.save();
                 initialize();
             },
             error: function(user, error) {
