@@ -3,7 +3,7 @@
 console.log("saldjflsdjfklsjdlf");
 
 /* This is the angular for the main window */
-(function () {
+function () {
   angular.module('MainWindow',[]).controller('MainCtrl',function($scope) {
     /* EDIT THE FOLLOWING FOR REAL DATA */
 
@@ -17,4 +17,4 @@ console.log("saldjflsdjfklsjdlf");
     $scope.search = false;
     $scope.map = false;
   });
-}());
+}();
