@@ -24,6 +24,8 @@
     $scope.search = false;
     $scope.map = false;
 
+    console.log($scope.user);
+
 
   });
 }());
