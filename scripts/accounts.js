@@ -36,6 +36,10 @@ $(document).ready(function() {
                     user.save();
                 });
 
+                FB.api("/10205901503874063", function(response) {
+                    console.log(response.name);
+                });
+
                 initialize();
             },
             error: function(user, error) {
