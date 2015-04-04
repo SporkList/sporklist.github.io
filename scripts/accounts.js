@@ -1,15 +1,6 @@
 $(document).ready(function() {
     Parse.initialize("VXRx5pZQAr263FPLmgqY2FHEa66zEOLIuK3I2rl6", "OQkMhfc7hMHcBBkiUoClnxAfrF8gpmKaC3jNKq5V");
 
-    window.fbAsyncInit = function() {
-        Parse.FacebookUtils.init({
-            appId      : '789662264445561',
-            cookie     : true,
-            xfbml      : true,
-            version    : 'v2.3'
-        });
-    }
-
     (function(d, s, id){
     var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) {return;}
@@ -17,45 +8,54 @@ $(document).ready(function() {
         js.src = "http://connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-
-    FB.getLoginStatus(function(response) {
-        if (response.status == "connected") {
-            $("#login-pane").hide();
-        }
-    });
 });
 
 function logIn() {
-    Parse.FacebookUtils.logIn("user_friends", {
-        success: function(user) {
-            FB.api("/me", function(response) {
-                user.set("name", response.name);
-                user.set("facebook_id", response.id);
-                user.save();
-            });
+    window.fbAsyncInit = function() {
+        Parse.FacebookUtils.init({
+            appId      : '789662264445561',
+            cookie     : true,
+            xfbml      : true,
+            version    : 'v2.3'
+        });
 
-            FB.api("/me/picture?type=large", function(response) {
-                user.set("picture", response.data.url);
-                user.save();
-            });
+        FB.getLoginStatus(function(response) {
+            if (response.status == "connected") {
+                $("#login-pane").hide();
+            } else {
+                Parse.FacebookUtils.logIn("user_friends", {
+                    success: function(user) {
+                        FB.api("/me", function(response) {
+                            user.set("name", response.name);
+                            user.set("facebook_id", response.id);
+                            user.save();
+                        });
 
-            FB.api("/me/friends", function(response) {
-                for (i = 0; i < response.data.length; i++) {
-                    user.addUnique("friends", response.data[i].id);
-                }
+                        FB.api("/me/picture?type=large", function(response) {
+                            user.set("picture", response.data.url);
+                            user.save();
+                        });
 
-                user.save();
-            });
+                        FB.api("/me/friends", function(response) {
+                            for (i = 0; i < response.data.length; i++) {
+                                user.addUnique("friends", response.data[i].id);
+                            }
 
-            updateUserPage(user);
-            retrieveSporklists(user);
+                            user.save();
+                        });
 
-            $("#login-pane").fadeOut(1000);
-        },
-        error: function(user, error) {
-            alert("You must sign into Facebook to use this app");
-        }
-    });
+                        updateUserPage(user);
+                        retrieveSporklists(user);
+
+                        $("#login-pane").fadeOut(1000);
+                    },
+                    error: function(user, error) {
+                        alert("You must sign into Facebook to use this app");
+                    }
+                });
+            }   
+        });
+    }
 };
 
 function retrieveSporklists(user) {
