@@ -23,7 +23,7 @@ function updateSporklists (sporklists) {
   scope.$apply(function () {scope.playlists = sporklists});
 }
 
-/* This is the wrapper for the entire UI */
+/* This is the angular for the sidebar */
 (function () {
   angular.module('Playlist',[]).controller('PLCtrl',function($scope) {
     /* EDIT THE FOLLOWING FOR REAL DATA */
