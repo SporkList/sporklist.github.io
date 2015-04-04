@@ -19,19 +19,8 @@ function updateSporklists (sporklists) {
   var sidebarList = document.getElementById("playlists");
   var scope = angular.element(sidebarList).scope();
 
-  console.log(sidebarList);
   /* scope.$apply(function() {scope.playlists = sporklists}); */
-  scope.$apply(function () {scope.playlists = 
-    [ 'I',
-      'love',
-      'OS',
-      'and',
-      'Don\'t',
-      'Care',
-      'Who',
-      'Knows!'
-    ];
-  });
+  scope.$apply(function () {scope.playlists = sporklists});
 }
 
 /* This is the wrapper for the entire UI */
