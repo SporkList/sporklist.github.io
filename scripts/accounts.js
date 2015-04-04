@@ -31,8 +31,8 @@ $(document).ready(function() {
                 });
 
                 FB.api("/me/friendlists", function(response) {
-                    console.log("what");
-                    console.log(response.data);
+                    console.log("why");
+                    console.log(response);
                     user.save();
                 });
 
