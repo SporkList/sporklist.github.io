@@ -37,5 +37,12 @@ function updateSporklists (sporklists, position) {
 
       query.equalTo("sporklists", playlist.id);
     }
+
+    console.log("IT'S WORKING");
+    console.log("IT'S WORKING");
+    console.log("IT'S WORKING");
+    console.log("IT'S WORKING");
+    console.log("IT'S WORKING");
+    console.log("IT'S WORKING");
   });
 }());
