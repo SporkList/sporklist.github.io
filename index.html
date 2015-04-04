@@ -1,4 +1,4 @@
-<html>
+<html ng-app class="UIWrapper">
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="styles/main.css">
@@ -13,24 +13,27 @@
         <div id="playlists-pane">
             <div id="logo-header"></div>
             <div id="playlist-header">Playlists</div>
-            <div id="playlists">
-                <div class="playlist">xyz</div>
-                <div class="playlist">abc</div>
-                <div class="playlist">xyz</div>
-                <div class="playlist">abc</div>
-                <div class="playlist">xyz</div>
-                <div class="playlist">abc</div>
-                <div class="playlist">xyz</div>
-                <div class="playlist">abc</div>
-                <div class="playlist">xyz</div>
-                <div class="playlist">abc</div>
-                <div class="playlist">xyz</div>
-                <div class="playlist">abc</div>
+            <div id="playlists" ng-app="UIWrapper" ng-controller="UICtrl as cont">
+                <!-- List of playlists -->
+                <div class="playlist" ng-repeat="c in cont.playlists">{{c.name}}</div>
+                <!-- REPEATS
+                  <div class="playlist">abc</div>
+                  <div class="playlist">xyz</div>
+                  <div class="playlist">abc</div>
+                  <div class="playlist">xyz</div>
+                  <div class="playlist">abc</div>
+                  <div class="playlist">xyz</div>
+                  <div class="playlist">abc</div>
+                  <div class="playlist">xyz</div>
+                  <div class="playlist">abc</div>
+                  <div class="playlist">xyz</div>
+                  <div class="playlist">abc</div>
+                -->
             </div>
             <div id="new-playlist-button">New Playlist +</div>
         </div>
-        <div id="info-pane">
-            
+        <div id="info-pane" ng->
+          
         </div>
     </body>
 </html>
