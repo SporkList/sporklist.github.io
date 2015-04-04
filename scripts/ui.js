@@ -30,32 +30,29 @@ playlistLIst.controller('PLLCtrl', function() {
 });
 */
 
+playlists = ['abc', 'def', 'xyz'];
 
+/* This is the wrapper for the entire UI */
+(function () {
+  angular.module('UIWrapper',[]).controller('UICtrl',function() {
+    /* EDIT THE FOLLOWING FOR REAL DATA */
+
+    /* playlists -> get playlists from Parse */
+    this.playlists = playlists;
+
+    /* Get user's friends */
+    this.friends = currUser.get("friends");
+
+    /* Get user's name */
+    this.name = currUser.get("name");
+
+    /* Get user's picture */
+    this.picture = currUser.get("picture");
+
+  });
+}());
 
 function updateUserPage(user) {
   /* Do something with the user */
-  
-  /* This is the wrapper for the entire UI */
-  (function () {
-    angular.module('UIWrapper',[]).controller('UICtrl',function() {
-      /* Debug code */
-      console.log("wrapper got called");
-  
-      /* EDIT THE FOLLOWING FOR REAL DATA */
-  
-      /* playlists -> get playlists from Parse */
-      this.playlists = ['abc', 'def', 'xyz'];
-
-      /* Get user's friends */
-      this.friends = currUser.get("friends");
-
-      /* Get user's name */
-      this.name = currUser.get("name");
-
-      /* Get user's picture */
-      this.picture = currUser.get("picture");
-  
-    });
-  }());
-  
+  playlists = [];
 }
