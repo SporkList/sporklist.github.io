@@ -1,5 +1,6 @@
 function mouseenter() {
 	$(this).children('.delete').show();
+    alert("FUCK YOU");
 }
 
 function mouseleave() {
