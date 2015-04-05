@@ -39,7 +39,20 @@
 
             parseUser.fetch({
               success: function(myObject) {
-                retrieveSporkLists(myObject);
+                var sporklist = Parse.Object.extend("Sporklist");
+                var query = new Parse.Query(sporklist);
+
+                query.equalTo("author", parseUser.getUsername());
+                query.limit(1000);
+
+                query.find({
+                    success: function(results) {
+                        updateSporklists(results);
+                    },
+                    error: function(error) {
+                        alert("Error: " + error.code + " " + error.message);
+                    }
+                });
               },
               error: function(myObject, error) {
                 // The object was not refreshed successfully.
