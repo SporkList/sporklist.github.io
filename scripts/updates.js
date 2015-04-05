@@ -27,28 +27,22 @@ function getFriends (friendIds) {
     query.find( {
         /* add info to some results */
         success: function (results) {
-            console.log("success!");
-            console.log(results);
-            resList = results;
-            console.log(resList);
+
+            var friendList = [];
+	        
+            for(var i=0;i<math.min(5,results.length);i++) {
+                friendList[i] = results[i].get('name');
+            }
+
+            var friendListElem = document.getElementById("friend-name");
+            var scope = angular.element(friendListElem).scope();
+
+            scope.$apply(function() {scope.friendList = friendList} );
         },
         error: function (error) {
             console.log("You have no friends :( " + error);
         }
     });
-
-    console.log(resList);
-
-    var friendList = [];
-	
-    for(var i=0;i<5;i++) {
-        friendList[i] = resList[i].get('name');
-    }
-
-    var friendListElem = document.getElementById("friend-name");
-    var scope = angular.element(friendListElem).scope();
-
-    scope.$apply(function() {scope.friendList = friendList} );
 
 }
 
