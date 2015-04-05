@@ -3,5 +3,6 @@ function onMouseEnter(e) {
 }
 
 function onMouseLeave(e) {
+    alert(e.target.firstChild.className);
     e.target.firstChild.style.visibility='hidden';
 }
