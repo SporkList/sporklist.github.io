@@ -345,6 +345,7 @@ body, html {
 }
 
 #restaurant {
+    position: relative;
     height: 88px;
     box-shadow:0 1px 2px #aaa;
     background:white;
@@ -459,6 +460,5 @@ body, html {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-image: url("../images/trash.png");
-    /*visibility: hidden;*/
     cursor: pointer;
 }
