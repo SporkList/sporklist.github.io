@@ -232,11 +232,13 @@ body {
 
 #my-picture {
     display: table-cell;
+    background-size: 150px 150px;
     width: 150px;
     height: 150px;
 }
 
 #friend-picture {
+    background-size: 64px 64px;
     position: absolute;
     margin-top: 12px;
     margin-left: 12px;

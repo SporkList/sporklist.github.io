@@ -8,7 +8,6 @@
     $scope.playlists = [];
 
     $scope.onClick = function(playlist) {
-      alert("nice meme");
       var restaurant = Parse.Object.extend("Restaurant");
       var query = new Parse.Query(restaurant);
 
@@ -25,7 +24,7 @@
                 list.push(results[i]);
               }
 
-              updateSporklist(list);
+              updateSporklist(playlist.get("name"), list);
             },
             error: function(error) {
               alert("Error: " + error.code + " " + error.message);
@@ -52,6 +51,7 @@
   });
 
   app.controller('sporkCtrl', function($scope) {
-
+    $scope.name = "";
+    $scope.restaurants = [];
   });
 }());

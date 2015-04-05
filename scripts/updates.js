@@ -39,7 +39,23 @@ function getFriends (friendIds) {
 
 }
 
-function updateSporklist(sporklist) {
+function updateSporklist(name, sporklist) {
+    var main = document.getElementById("info-pane");
+    var scope = angular.element(main).scope();
 
-    
+    scope.$apply(function() {
+        scope.user = false;
+        scope.friend = false;
+        scope.sporklist = true;
+        scope.search = false;
+        scope.map = false;   
+    });
+
+    var spork = document.getElementById("sporkCtrl");
+    var scope = angular.element(spork).scope();
+
+    scope.$apply(function() {
+        scope.name = name;
+        scope.restaurants = sporklist;
+    });
 }
