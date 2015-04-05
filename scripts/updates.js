@@ -21,7 +21,7 @@ function updateSporklists (sporklists, position) {
 
 function updateFriendSporklists (sporklists, position) {
     var list = document.getElementById("friend-profile-box");
-    var scope = angular.element(sidebarList).scope();
+    var scope = angular.element(list).scope();
 
     cope.$apply(function() {
         scope.user = false;
