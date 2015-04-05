@@ -99,7 +99,7 @@ function dropAdd(e) {
     var location = new Parse.GeoPoint({latitude: choice.geometry.location.lat(), longitude: choice.geometry.location.lng()});
 
     var restaurant = Parse.Object.extend("Restaurant");
-    var query = Parse.Query(restaurant);
+    var query = new Parse.Query(restaurant);
     query.equalTo("place_id", pid);
     query.find({
         success: function(results) {
