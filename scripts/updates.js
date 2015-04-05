@@ -19,6 +19,21 @@ function updateSporklists (sporklists, position) {
     scope.$apply(function () {scope.playlists = sporklists});
 }
 
+function updateFriendSporklists (sporklists, position) {
+    var list = document.getElementById("friend-profile-box");
+    var scope = angular.element(sidebarList).scope();
+
+    cope.$apply(function() {
+        scope.user = false;
+        scope.friend = true;
+        scope.sporklist = false;
+        scope.search = false;
+        scope.map = false;   
+    });
+
+    scope.$apply(function () {scope.sporklists = sporklists});
+}
+
 function getFriends (friendIds) {
     var users = Parse.Object.extend("_User");
     var query = new Parse.Query(users);
@@ -57,5 +72,24 @@ function updateSporklist(name, sporklist) {
     scope.$apply(function() {
         scope.name = name;
         scope.restaurants = sporklist;
+    });
+}
+
+function updateFriend(friend) {
+    var name = friend.get("name");
+    var picture = friend.get("picture");
+
+    var sporklist = Parse.Object.extend("Sporklist");
+    var query = new Parse.Query(sporklist);
+    query.equalTo("author", friend.getUsername());
+    query.limit(1000);
+
+    query.find({
+        success: function(results) {
+            updateFriendSporklists(results);
+        },
+        error: function(error) {
+            alert("Error: " + error.code + " " + error.message);
+        }
     });
 }

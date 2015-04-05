@@ -35,7 +35,7 @@
     <body>
         <!-- Loading overlay -->
         <div id="loading-cover">
-            <div id="loading-area">Please enable geolocation services.</div>
+            <div id="loading-area">Fetching location...</div>
         </div>
         <!-- Loading overlay -->
     
@@ -74,7 +74,7 @@
 
                 <!-- Profile -->
                 <div id="my-profile-box" ng-show="user" ng-controller="MeCtrl as sc">
-                    <div id="my-profile-header">
+                    <div id="my-profile-header" class="header">
                         <div id="my-picture" class="profile-picture"></div>
                         <div class="profile-info">{{name}}</div>
                     </div>
@@ -88,7 +88,15 @@
                 </div> <!-- End of Profile -->
 
                 <!-- Profile of a friend -->
-                <div id="friend-profile-box">
+                <div id="friend-profile-box" ng-show="friend" ng-controller="FriendCtrl">
+                    <div id="friend-profile-header" class="header">
+                        <div id="my-picture" class="profile-picture"></div>
+                        <div class="profile-info">{{name}}</div>
+                    </div>
+                    <div class="section-title">sporklists</div>
+                    <div id="friends-sporklists" ng-repeat="sporklist in sporklists">
+                        <div id="friend-sporklist">{{sporklist.get("name")}}</div>
+                    </div>
                 </div> <!-- End of friend profile -->
 
                 <!-- sporklist -->

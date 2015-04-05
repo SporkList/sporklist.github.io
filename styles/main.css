@@ -222,7 +222,7 @@ body, html {
     padding-bottom: 72px;
 }
 
-#my-profile-header {
+.header {
     display: table-row;
 }
 

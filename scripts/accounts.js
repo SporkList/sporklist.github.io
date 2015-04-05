@@ -61,15 +61,9 @@ function retrieveSporklists(user) {
     query.equalTo("author", user.getUsername());
     query.limit(1000);
 
-    var lists = [];
     query.find({
         success: function(results) {
-            // Do something with the returned Parse.Object values
-            for (var i = 0; i < results.length; i++) { 
-                lists.push(results[i]);
-            }
-
-            updateSporklists(lists);
+            updateSporklists(results);
         },
         error: function(error) {
             alert("Error: " + error.code + " " + error.message);

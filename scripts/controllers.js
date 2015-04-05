@@ -48,10 +48,19 @@
   app.controller('MeCtrl', function($scope) {
     $scope.name = "";
     $scope.friendList = [];
+    $scope.onClick = function(friend) {
+      updateFriend(friend);
+    };
   });
+
+  app.controller('FriendCtrl', function($scope) {
+    $scope.name = "";
+    $scope.sporklists = [];
+  })
 
   app.controller('sporkCtrl', function($scope) {
     $scope.name = "";
     $scope.restaurants = [];
   });
+
 }());
