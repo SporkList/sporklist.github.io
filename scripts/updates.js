@@ -27,7 +27,7 @@ function getFriends (friendIds) {
     query.find( {
         /* add info to some results */
         success: function (results) {
-            var friendListElem = document.getElementById("my-friends");
+            var friendListElem = document.getElementById("my-profile-box");
             var scope = angular.element(friendListElem).scope();
 
             scope.$apply(function() {scope.friendList = results} );
