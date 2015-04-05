@@ -1,5 +1,5 @@
-var position;
-var searchResults;
+var position = null;
+var searchResults = null;
 var googlePlaceReq = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
 var googleGeoReq = "https://maps.googleapis.com/maps/api/geocode/json";
 var googleAPIkey = "?key=AIzaSyDjI5DwNn9q_yDdi4_-jqv0V4aIjsr39oc";
@@ -73,12 +73,16 @@ function main(loc) {
     });
 }
 
+function locError(locErr) {
+    alert("You cannot use this site because we could not get your geolocation. The error we got was: " + locErr.code);
+}
+
 $(document).ready(function() {
     $("#restaurant-search-box").hide();
     $(".restaurant-more").hide();
     setPlaylistHeight();
     setTimeout(function() {
-        navigator.geolocation.getCurrentPosition(main, main);
+        navigator.geolocation.getCurrentPosition(main, locError);
     }, 600);
 });
 
