@@ -1,7 +1,7 @@
 function mouseenter() {
-	$($(this).children()[0]).css("visibility", "visible");
+	$(this).children('.delete').show();
 }
 
 function mouseleave() {
-	$($(this).children()[0]).css("visibility", "hidden");
+	$(this).children('.delete').hide();
 }
