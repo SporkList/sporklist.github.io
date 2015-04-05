@@ -36,6 +36,8 @@
         plist.destroy({
           success: function(myObject) {
             retrieveSporklists(parseUser);
+
+            resetView();
           },
           error: function(myObject, error) {
             console.log(error);
