@@ -2,7 +2,7 @@ var position = null;
 var googlePlaceReq = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
 var googleGeoReq = "https://maps.googleapis.com/maps/api/geocode/json";
 var googleAPIkey = "?key=AIzaSyDjI5DwNn9q_yDdi4_-jqv0V4aIjsr39oc";
-var googleRadius = "&radius=8000"
+var googleRadius = "&radius=8000";
 var placeTypes = "&types=restaurant|meal_delivery|meal_takeaway|cafe";
 
 /* In the case of no location name, we use the user's current location */
