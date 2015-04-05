@@ -460,7 +460,7 @@ body, html {
     background-repeat: no-repeat;
     background-image: url("../images/trash.png");
     cursor: pointer;
-    visibility: hidden;
+    display: none;
 }
 
 .delete-alt {
