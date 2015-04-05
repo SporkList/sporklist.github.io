@@ -1,9 +1,7 @@
 function onMouseEnter(e) {
-    //this.firstChild.style.visibility='visible';
-    $(this).children('.delete').show();
+    e.target.firstChild.style.visibility='visible';
 }
 
 function onMouseLeave(e) {
-    //this.firstChild.style.visibility='hidden';
-    $(this).children('.delete').hide();
+    e.target.firstChild.style.visibility='hidden';
 }
