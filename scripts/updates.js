@@ -144,6 +144,7 @@ function updateSearchResults(rest_results) {
     });
 }
 
-function follow (url) {
-    window.open(url);
+function follow (restaurantObject) {
+    console.log(restaurantObject);
+    window.open(restaurantObject.get("url"));
 }
