@@ -66,6 +66,36 @@ function setPlaylistHeight() {
     $("#playlists").css('height', window.innerHeight - sum);
 }
 
+function dragstartAdd(e) {
+    e.dataTransfer.effectAllowed = 'copy';
+    e.dataTransfer.setData('pid', this.getAttribute('data-uid'));
+}
+
+function dragoverAdd(e) {
+    if (e.preventDefault) e.preventDefault(); // allows us to drop
+    e.dataTransfer.dropEffect = 'copy';
+    return false;
+}
+
+function dragenterAdd() { $(this).addClass('over'); }
+function dragleaveAdd() { $(this).removeClass('over'); }
+
+function dropAdd(e) {
+    if (e.stopPropagation) e.stopPropagation();
+    var pid = e.dataTransfer.getData('pid');
+    var uid = this.getAttribute('data-uid');
+    
+    var choice;
+    for(var i = 0; i < searchResults.length; i += 1) {
+        if(searchResults[i].place_id == pid) {
+            choice = searchResults[i];
+            break;
+        }
+    }
+    
+    /* Integrate with shit here */
+}
+
 function main(loc) {
     service = new google.maps.places.PlacesService(/** @type {HTMLInputElement} */(document.getElementById('attributions')));
     autocomplete = new google.maps.places.Autocomplete(/** @type {HTMLInputElement} */(document.getElementById('location-bar')), { types: ['geocode'] });

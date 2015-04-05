@@ -143,6 +143,11 @@ body, html {
     background-color: #F0F0F0;
 }
 
+.playlist.over {
+    cursor: copy;
+    background-color: #ED9121;
+}
+
 #new-playlist-button {
     display: block;
     width: 100%;
@@ -373,6 +378,10 @@ body, html {
     height: 128px;
     border-top: 1px solid #D0D0D0;
     float: left;
+}
+
+.restaurant-result:hover {
+    cursor: move;
 }
 
 .restaurant-title {
