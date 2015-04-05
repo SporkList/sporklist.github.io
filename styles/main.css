@@ -425,10 +425,3 @@ body, html {
     width: 280px;
     margin: 128px auto;
 }
-
-#x {
-  font: 8px;
-  text-align: right;
-  padding-right: 16px;
-  color: #888888;
-}
