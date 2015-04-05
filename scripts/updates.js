@@ -30,7 +30,7 @@ function getFriends (friendIds) {
 
             var friendList = [];
 	        
-            for(var i=0;i<math.min(5,results.length);i++) {
+            for(var i=0;i<Math.min(5,results.length);i++) {
                 friendList[i] = results[i].get('name');
             }
 
