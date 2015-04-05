@@ -145,5 +145,6 @@ function updateSearchResults(rest_results) {
 }
 
 function follow (restaurantObject) {
+    console.log(restaurantObject);
     window.open(restaurantObject.get("url"));
 }
