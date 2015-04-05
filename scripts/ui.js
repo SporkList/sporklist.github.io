@@ -1,8 +1,7 @@
 function onMouseEnter(e) {
-    e.target.firstChild.style.visibility='visible';
+    $(e.target).find('.delete').show();
 }
 
 function onMouseLeave(e) {
-    alert(e.target.firstChild.className);
-    e.target.firstChild.style.visibility='hidden';
+    $(e.target).find('.delete').hide();
 }
