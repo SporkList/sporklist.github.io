@@ -2,6 +2,8 @@ var parseUser = null;
 var position = null;
 var service = null;
 var autocomplete = null;
+var searchResults = null;
+var count = 0;
 
 /* In the case of no location name, we use the user's current location */
 function retrieveSearchResults() {
@@ -30,7 +32,22 @@ function displaySearchResults(results, status) {
         alert("Failed to perform search because: " + status);
         return;
     }
-    updateSearchResults(results);
+    
+    count = results.length;
+    searchResults = [];
+    
+    for(r in results) {
+        var request = {
+            placeId: r.place_id
+        };
+        service.getDetails(request, addDetails);
+    }
+}
+
+function addDetails(result, status) {
+    if(status == google.maps.places.PlacesServiceStatus.OK) searchResults.push(result);
+    count -= 1;
+    if(count <= 0) updateSearchResults(results);
 }
 
 /* Hack for having a perfect playlist height */
