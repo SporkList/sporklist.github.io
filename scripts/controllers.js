@@ -16,13 +16,7 @@
       query.withinMiles("location", new Parse.GeoPoint(position.latitude, position.longitude), 999);
       query.find({
         success: function(results) {
-          list = []
-
-          for (var i = 0; i < results.length; i++) { 
-            list.push(results[i]);
-          }
-
-          updateSporklist(playlist.get("name"), list);
+          updateSporklist(playlist.get("name"), results);
         },
         error: function(error) {
           alert("Error: " + error.code + " " + error.message);
@@ -63,13 +57,7 @@
       query.withinMiles("location", new Parse.GeoPoint(position.latitude, position.longitude), 30);
       query.find({
         success: function(results) {
-          list = []
-
-          for (var i = 0; i < results.length; i++) { 
-            list.push(results[i]);
-          }
-
-          updateSporklist(sporklist.get("name"), list);
+          updateSporklist(sporklist.get("name"), results);
         },
         error: function(error) {
           alert("Error: " + error.code + " " + error.message);
