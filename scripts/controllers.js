@@ -129,7 +129,7 @@
 
     $scope.follow = function (obj) {
       console.log(obj);
-      console.log(obj.get('url');
+      console.log(obj.get('url'));
       window.open = obj.get('url');
     };
   });
