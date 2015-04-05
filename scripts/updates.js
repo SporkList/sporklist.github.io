@@ -34,7 +34,7 @@ function getFriends (friendIds) {
                 friendList[i] = results[i].get('name');
             }
 
-            var friendListElem = document.getElementById("friend-name");
+            var friendListElem = document.getElementById("my-friends");
             var scope = angular.element(friendListElem).scope();
 
             scope.$apply(function() {scope.friendList = friendList} );
