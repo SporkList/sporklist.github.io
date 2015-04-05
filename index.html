@@ -114,7 +114,7 @@
                 <div id="sporklist" ng-show="sporklist" ng-controller="sporkCtrl">
                     <div class="spork-header">{{name}}</div>
                     <div id="restaurant" ng-repeat="restaurant in restaurants">
-                        <div class="restaurant-name" onclick="window.open(restaurant.get('url'))">
+                        <div class="restaurant-name" onclick="follow(restaurant.get('url'))">
                             {{restaurant.get("name")}}
                         </div>
                     </div>
