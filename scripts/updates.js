@@ -59,8 +59,6 @@ function shuffle(arr) {
 
 function updateSporklist(name, sporklist) {
 
-    console.log(sporklist);
-
     /* Randomize sporklist */
     sporklist = shuffle(sporklist);
 
@@ -144,4 +142,8 @@ function updateSearchResults(rest_results) {
     scope.$apply(function() {
         scope.results = rest_results;
     });
+}
+
+function follow (restaurantObject) {
+  window.open(restaurantObject.get("url"));
 }

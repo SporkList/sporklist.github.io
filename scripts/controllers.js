@@ -126,6 +126,10 @@
   app.controller('sporkCtrl', function($scope) {
     $scope.name = "";
     $scope.restaurants = [];
+
+    $scope.follow = function (obj) {
+      window.open = obj.get('url'));
+    };
   });
   
   app.controller('SearchCtrl', function($scope) {
