@@ -22,6 +22,11 @@
           alert("Error: " + error.code + " " + error.message);
         }
       });
+
+      $scope.onMove() = function() {
+        console.log("called");
+        $(".trash").css("visibility", "visible");
+      }
     }
   });
 
