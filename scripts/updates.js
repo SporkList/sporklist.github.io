@@ -51,7 +51,7 @@ function updateSporklist(name, sporklist) {
         scope.map = false;   
     });
 
-    var spork = document.getElementById("sporkCtrl");
+    var spork = document.getElementById("sporklist");
     var scope = angular.element(spork).scope();
 
     scope.$apply(function() {
