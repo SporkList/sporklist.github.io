@@ -137,9 +137,11 @@ function main(loc) {
     
     $(".playlist-wrapper").hover(
         function(e) {
+            alert("FUCK");
             $(this).children('.delete').hide();
         },
         function(e) {
+            alert("FUCK 2");
             $(this).children('.delete').show();
         }
     );
