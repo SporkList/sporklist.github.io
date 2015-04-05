@@ -47,7 +47,7 @@ function displaySearchResults(results, status) {
 function addDetails(result, status) {
     if(status == google.maps.places.PlacesServiceStatus.OK) searchResults.push(result);
     count -= 1;
-    if(count <= 0) updateSearchResults(results);
+    if(count <= 0) updateSearchResults(searchResults);
 }
 
 /* Hack for having a perfect playlist height */
