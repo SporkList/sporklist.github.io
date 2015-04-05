@@ -295,13 +295,14 @@ body {
     user-select:none;
     animation:fly-in-from-left .5s 1s ease both;
     transform-origin:top left;
+    cursor: default;
 }
 
 .restaurant-name {
     position: absolute;
     font-size: 40px;
     padding-left: 16px;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 /* Restaurant Search */
