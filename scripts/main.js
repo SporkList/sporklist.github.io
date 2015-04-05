@@ -105,7 +105,7 @@ function dropAdd(e) {
         success: function(results) {
             var target;
             if (results.length == 0) {
-                target = Parse.Object.extend("Restaurant");
+                target = new restaurant();
                 target.set("place_id", pid);
                 target.set("name", name);
                 target.set("locaiton", location);
