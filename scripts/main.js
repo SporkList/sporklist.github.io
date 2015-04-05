@@ -23,7 +23,7 @@ function retrieveSearchResults() {
         keyword: $("#search-bar").val()
     };
     
-    //service.nearbySearch(request, displaySearchResults);
+    service.nearbySearch(request, displaySearchResults);
 }
 
 /* Callback that FINALLY has our search results */
