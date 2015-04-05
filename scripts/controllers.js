@@ -48,10 +48,6 @@
     $scope.mouseenter = function() {
       $($(this).children()[0]).css("visibility", "visible");
     }
-
-    $scope.onDeleteClick = function(playlist) {
-      console.log("asdf");
-    }
   });
 
   app.controller('NewPLCtrl', function($scope) {
