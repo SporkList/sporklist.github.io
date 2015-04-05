@@ -25,12 +25,13 @@
         }
       });
 
-      $scope.onMouseEnter = function(e) {
-          this.firstChild.style.visibility='visible';
+      $scope.mouseenter = function() {
+        console.log("asdf");
+        $(this).children('.delete').show();
       }
 
-      $scope.onMouseLeave = function(e) {
-          this.firstChild.style.visibility='hidden';
+      $scope.mouseleave = function() {
+        $(this).children('.delete').hide();
       }
 
       $scope.onDeleteClick = function(plist) {
@@ -46,9 +47,13 @@
         });
       }
     }
+
+    $scope.mouseenter = function() {
+      $($(this).children()[0]).css("visibility", "visible");
+    }
   });
 
-  app.controller('newPLCtrl', function($scope) {
+  app.controller('NewPLCtrl', function($scope) {
     $scope.onClick = function() {
       if (parseUser == null) {
         return;
@@ -57,7 +62,7 @@
       $("#new-sporklist").css("visibility", "visible");
       $("#new-sporklist").focus();
       $('#new-sporklist').keyup(function(e){
-        if(e.keyCode == 13 && $("#new-sporklist").val() != "") {
+        if(e.keyCode == 13 && $("#new-sporklist").val()) != "") {
             var sporklist = Parse.Object.extend("Sporklist");
             var newList = new sporklist();
             newList.set("name", $("#new-sporklist").val());
