@@ -135,11 +135,11 @@ function main(loc) {
     position = loc.coords;
     $("#loading-cover").fadeOut(300);
     
-    $(".playlist-wrapper").on('mouseenter mouseleave', 'div', function(event) {
+    $(".playlist-wrapper").on('mouseenter mouseleave', '.delete', function(event) {
         if (event.type == 'mouseenter') {
-            $(this ).find(".delete").hide();
+            $(this).find(".delete").hide();
         } else  {
-            $(this ).find(".delete").show();
+            $(this).find(".delete").show();
         }
     });
     
