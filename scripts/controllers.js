@@ -13,7 +13,7 @@
 
       query.equalTo("sporklists", playlist.id);
       query.limit(1000);
-      query.withinMiles("location", new Parse.GeoPoint(position.latitude, position.longitude), 999);
+      query.withinMiles("location", new Parse.GeoPoint(position.latitude, position.longitude), 50);
       query.find({
         success: function(results) {
           updateSporklist(playlist.get("name"), results);
@@ -54,7 +54,7 @@
 
       query.equalTo("sporklists", sporklist.id);
       query.limit(1000);
-      query.withinMiles("location", new Parse.GeoPoint(position.latitude, position.longitude), 999);
+      query.withinMiles("location", new Parse.GeoPoint(position.latitude, position.longitude), 50);
       query.find({
         success: function(results) {
           updateSporklist(sporklist.get("name"), results);
