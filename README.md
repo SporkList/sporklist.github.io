@@ -9,3 +9,5 @@ One such decision, as we probably have all experienced in the past, is the decis
 
 ## What is SporkList?
 SporkList is a playlist for food; a "food player", if you will. It allows you to create playlists of restaurants, dynamically selects an option based on user-set preferences, and lets you share your SporkLists with your friends. Built on cutting-edge technology, SporkList is lightweight and flexible, running on almost every web-enabled platform. We use Angular.js, Parse, Google Analytics, Big Data, Cloud Computing, Parallelism, and Moore's Law together to create the ultimate and seemless connection between social media and social outings. 
+
+***Warning***: This is a hackathon project. If you're not sure what to make of the commit history, don't ask us. We don't know either.
