@@ -96,6 +96,7 @@ function dropAdd(e) {
     
     /* Integrate with shit here */
     var name = choice.name;
+    var url = choice.website;
     var loc = new Parse.GeoPoint({latitude: choice.geometry.location.lat(), longitude: choice.geometry.location.lng()});
 
     var restaurant = Parse.Object.extend("Restaurant");
@@ -110,6 +111,7 @@ function dropAdd(e) {
                 target.set("name", name);
                 target.set("location", loc);
                 target.set("sporklists", []);
+                target.set("url", url);
             } else {
                 target = results[0];
             }
