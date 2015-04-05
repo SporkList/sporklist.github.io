@@ -11,6 +11,13 @@
       var restaurant = Parse.Object.extend("Restaurant");
       var query = new Parse.Query(restaurant);
 
+      var main = document.getElementById("info-pane");
+      var scope = angular.element(main).scope();
+
+      scope.$apply(function() {
+          scope.isMe = "true";  
+      });
+
       query.equalTo("sporklists", playlist.id);
       query.limit(1000);
       query.withinMiles("location", new Parse.GeoPoint(position.latitude, position.longitude), 50);
@@ -111,6 +118,7 @@
     $scope.sporklist = false;
     $scope.search = false;
     $scope.map = false;
+    $scope.isMe = true;
   });
 
   app.controller('MeCtrl', function($scope) {
@@ -128,6 +136,13 @@
     $scope.onClick = function(sporklist) {
       var restaurant = Parse.Object.extend("Restaurant");
       var query = new Parse.Query(restaurant);
+
+      var main = document.getElementById("info-pane");
+      var scope = angular.element(main).scope();
+
+      scope.$apply(function() {
+          scope.isMe = "false";  
+      });
 
       query.equalTo("sporklists", sporklist.id);
       query.limit(1000);
