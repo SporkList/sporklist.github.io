@@ -57,7 +57,6 @@
       query.withinMiles("location", new Parse.GeoPoint(position.latitude, position.longitude), 30);
       query.find({
         success: function(results) {
-          console.log(results);
           updateSporklist(sporklist.get("name"), results);
         },
         error: function(error) {
