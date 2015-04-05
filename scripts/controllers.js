@@ -26,7 +26,9 @@
   });
 
   app.controller('NewPLCtrl', function($scope) {
-    $scope.onClick() = [];
+    $scope.onClick = function() {
+      console.log("this");
+    };
   });
 
   app.controller('MainCtrl',function($scope) {
