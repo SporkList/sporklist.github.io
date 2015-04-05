@@ -26,6 +26,7 @@
         <script src="scripts/jquery-2.1.3.min.js"></script>
         <script src="scripts/angular.min.js"></script>
         <script src="//www.parsecdn.com/js/parse-1.4.0.min.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
         <script src="scripts/main.js"></script>
         <script src="scripts/updates.js"></script>
         <script src="scripts/controllers.js"></script>
@@ -117,9 +118,10 @@
                 <!-- Search results -->
                 <div id="restaurant-search-box" ng-show="search" ng-controller="SearchCtrl">
                     <div class="restaurant-result" ng-repeat="result in results">
-                        <div class="restaurant-title">{{result.results.name}}</div>
-                        <div class="restaurant-text">{{result.results.name}}</div>
+                        <div class="restaurant-title">{{result.name}}</div>
+                        <div class="restaurant-text">{{result.rating}}</div>
                     </div>
+                    <div id="attributions"></div>
                 </div>
                 <!-- End of search results -->
 

@@ -106,7 +106,7 @@ function resetView () {
     var main = document.getElementById("info-pane");
     var scope = angular.element(main).scope();
 
-    scope.$apply( function () {
+    scope.$apply(function () {
         scope.user = true;
         scope.friend = false;
         scope.sporklist = false;
