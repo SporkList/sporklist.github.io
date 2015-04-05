@@ -121,13 +121,13 @@
                 <!-- Search results -->
                 <div id="restaurant-search-box" ng-show="search" ng-controller="SearchCtrl">
                     <div class="restaurant-result" ng-repeat="result in results" draggable="true" ondragstart="drag(event)">
-                        <img class="restaurant-picture" ng-src="{{result.photos[1].getUrl({ maxWidth: '1000px', maxHeight: '1000px' })}}" />
+                        <img class="restaurant-picture" ng-src="{{result.photos[0].getUrl({ maxWidth: '10000px', maxHeight: '10000px' })}}" />
                         <div class="restaurant-title">{{result.name}}</div>
                         <div class="restaurant-text">
                             {{result.formatted_address}}<br>
                             Rating: {{result.rating}}/5.0<br>
                             Price: {{result.price_level}}/4<br>
-                            <a ng-href="{{result.url}}">More Information</a>
+                            <a ng-href="{{result.website}}">More Information</a>
                         </div>
                     </div>
                     <div id="attributions"></div>
