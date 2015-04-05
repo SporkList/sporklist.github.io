@@ -59,6 +59,8 @@ function shuffle(arr) {
 
 function updateSporklist(name, sporklist) {
 
+    console.log(sporklist);
+
     /* Randomize sporklist */
     sporklist = shuffle(sporklist);
 
