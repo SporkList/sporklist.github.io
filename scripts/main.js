@@ -84,6 +84,7 @@ function dropAdd(e) {
     if (e.stopPropagation) e.stopPropagation();
     var pid = e.dataTransfer.getData('pid');
     var uid = e.target.getAttribute('data-uid');
+    $(e.target).removeClass("over");
     
     var choice;
     for(var i = 0; i < searchResults.length; i += 1) {
@@ -94,6 +95,10 @@ function dropAdd(e) {
     }
     
     /* Integrate with shit here */
+    var name = choice.name;
+    var location = new Parse.GeoPoint({latitude: choice.geometry.location.lat(), choice.geometry.location.lng()});
+
+    console.log(uid);
 }
 
 function main(loc) {
