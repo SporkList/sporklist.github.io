@@ -127,7 +127,7 @@ function updateSearchResults(rest_results) {
         scope.map = false;   
     });
     
-    var result_box = document.getElementById("restauraunt-search-box");
+    var result_box = document.getElementById("restaurant-search-box");
     var scope = angular.element(result_box).scope();
 
     scope.$apply(function() {
