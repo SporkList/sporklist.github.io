@@ -1,24 +1,45 @@
 var location;
 var searchResults;
-var yelpReq = "http://api.yelp.com/v2/search";
+var googlePlaceReq = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
+var googleGeoReq = "https://maps.googleapis.com/maps/api/geocode/json";
+var googleAPIkey = "?key=AIzaSyDjI5DwNn9q_yDdi4_-jqv0V4aIjsr39oc";
+var googleRadius = "&radius=8000"
+var placeTypes = "&types=restaurant|meal_delivery|meal_takeaway|cafe";
 
-function yelpGetSearchResults(position) {
-    var term = "?term=" + $("#search-bar").val();
-    var loc = "&location=" + $("#location-bar").val().replace(" ", "+");
-    if(position != null) {
-        cll = "&cll=" + position.coords.latitude + "," + position.coords.longitude;
-        $.get(yelpReq + term + cll, displaySearchResults);
-    } else {
-        $.get(yelpReq + term + loc, displaySearchResults);
-    }
+/* In the case of no location name, we use the user's current location */
+function retrieveSearchResults(position) {
+    var term = "&keyword=" + $("#search-bar").val();
+    var loc = "&location=" + position.coords.latitude + "," + position.coords.longitude;
+    $.get(googlePlaceReq + googleAPIkey + googleRadius + placeTypes + loc + term, displaySearchResults);
 }
 
+/* In the case of using a location name, we need to look up the geocode */
+function lookupLocationComplete(data) {
+    lookupResults = JSON && JSON.parse(data) || $.parseJSON(data);
+    if(lookupResults.status != "OK") {
+        alert("Failed to perform search because: " + searchResults.status);
+        return;
+    }
+    var term = "&keyword=" + $("#search-bar").val();
+    var loc = "&location=" + lookupResults.results.geometry.location.lat + "," + lookupResults.results.geometry.location.lng;
+    $.get(googlePlaceReq + googleAPIkey + googleRadius + placeTypes + loc + term, displaySearchResults);
+}
+
+
+/* Callback that FINALLY has our search results */
 function displaySearchResults(data) {
     searchResults = JSON && JSON.parse(data) || $.parseJSON(data);
-    // Put into correct location here.
+    if(searchResults.status != "OK") {
+        alert("Failed to perform search because: " + searchResults.status);
+        return;
+    }
+    
+    /*** Do shit with data here ***/
+    
     $("#restaurant-search-box").fadeIn(100);
 }
 
+/* Hack for having a perfect playlist height */
 function setPlaylistHeight() {
     var sum = 0;
     $("#playlists-pane").children().each(function() {
@@ -39,14 +60,17 @@ $(document).ready(function() {
     $("#restaurant-search-box").hide();
     $(".restaurant-more").hide();
     
+    /* Add functionality to search bar */
     $("#restaurant-search").submit(function(e) {
         e.preventDefault();
         $("#content-box").children().fadeOut(100);
         
-        if($("#location-bar").val().replace(" ", "") == "" && navigator.geolocation)
-            navigator.geolocation.getCurrentPosition(yelpGetSearchResults);
-        else
-            yelpGetSearchResults(null);
+        if($("#location-bar").val().replace(" ", "") == "" && navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(retrieveSearchResults);
+        } else {
+            var addr = "&address=" + $("#location-bar").val().replace(" ", "+");
+            $.get(googleGeoReq + googleAPIkey + addr, locationLookupComplete);
+        }
     });
 });
 
