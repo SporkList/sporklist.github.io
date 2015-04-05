@@ -143,3 +143,7 @@ function updateSearchResults(rest_results) {
         scope.results = rest_results;
     });
 }
+
+function follow (url) {
+    window.open(url);
+}
