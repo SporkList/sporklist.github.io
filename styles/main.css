@@ -317,13 +317,7 @@ body, html {
     margin-left: 72px;
     margin-bottom: 24px;
     margin-top: 24px;
-    src: url('Roboto-Medium-webfont.eot');
-    src: url('Roboto-Medium-webfont.eot?#iefix') format('embedded-opentype'),
-         url('Roboto-Medium-webfont.woff2') format('woff2'),
-         url('Roboto-Medium-webfont.woff') format('woff'),
-         url('Roboto-Medium-webfont.ttf') format('truetype'),
-         url('Roboto-Medium-webfont.svg#robotomedium') format('svg');
-    font-family: roboto-medium;
+    font-family: robotomedium;
     font-size: 56px;
     font-weight: bolder;
 }
