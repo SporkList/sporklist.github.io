@@ -55,3 +55,20 @@ function logIn() {
         }
     }); 
 };
+
+function retrieveSporklists(user) {
+    var sporklist = Parse.Object.extend("Sporklist");
+    var query = new Parse.Query(sporklist);
+
+    query.equalTo("author", user.getUsername());
+    query.limit(1000);
+
+    query.find({
+        success: function(results) {
+            updateSporklists(results);
+        },
+        error: function(error) {
+            alert("Error: " + error.code + " " + error.message);
+        }
+    });
+}
