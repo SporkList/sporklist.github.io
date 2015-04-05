@@ -136,7 +136,7 @@ function main(loc) {
     position = loc.coords;
     $("#loading-cover").fadeOut(300);
     
-    $(".playlist-wrapper").hover(
+    $(".playlist").hover(
         function() {
             $scope.$apply(function() { $(this).find('.delete').show(); });
         },
