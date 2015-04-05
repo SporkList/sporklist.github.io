@@ -104,7 +104,7 @@ function dropAdd(e) {
     query.find({
         success: function(results) {
             var target;
-            if (reslts.length == 0) {
+            if (results.length == 0) {
                 target = Parse.Object.extend("Restaurant");
                 target.set("place_id", pid);
                 target.set("name", name);
