@@ -20,7 +20,7 @@ function retrieveSearchResults() {
 /* Callback that FINALLY has our search results */
 function displaySearchResults(results, status) {
     if(status != google.maps.places.PlacesServiceStatus.OK) {
-        alert("Failed to perform search because: " + searchResults.status);
+        alert("Failed to perform search because: " + status);
         return;
     }
     updateSearchResults(results);
