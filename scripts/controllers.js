@@ -37,7 +37,7 @@
             newList.set("author", parseUser.getUsername());
             newList.save();
 
-            parseUser.fetch(({
+            parseUser.fetch({
               success: function(myObject) {
                 retrieveSporkLists(myObject);
               },
