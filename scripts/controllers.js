@@ -24,6 +24,7 @@
       });
 
       $scope.mouseenter = function() {
+        console.log("asdf");
         $(this).children('.delete').show();
       }
 

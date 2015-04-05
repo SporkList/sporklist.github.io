@@ -455,7 +455,6 @@ body, html {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-image: url("../images/trash.png");
-    visibility: hidden;
     z-index: 2;
     cursor: pointer;
 }
