@@ -135,16 +135,13 @@ function main(loc) {
     position = loc.coords;
     $("#loading-cover").fadeOut(300);
     
-    $(".playlist-wrapper.ng-scope").hover(
-        function(e) {
-            alert("FUCK");
-            $(this).children('.delete').hide();
-        },
-        function(e) {
-            alert("FUCK 2");
-            $(this).children('.delete').show();
+    $(".playlist-wrapper").on('mouseenter mouseleave', 'div', function(event) {
+        if (event.type == 'mouseenter') {
+            $(this ).find(".delete").hide();
+        } else  {
+            $(this ).find(".delete").show();
         }
-    );
+    });
     
     /* Add functionality to search bar */
     $("#restaurant-search").submit(function(e) {
