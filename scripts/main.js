@@ -137,15 +137,6 @@ function main(loc) {
     position = loc.coords;
     $("#loading-cover").fadeOut(300);
     
-    $(".playlist").hover(
-        function() {
-            $scope.$apply(function() { $(this).find('.delete').show(); });
-        },
-        function() {
-            $scope.$apply(function() { $(this).find('.delete').hide(); });
-        }
-    );
-    
     /* Add functionality to search bar */
     $("#restaurant-search").submit(function(e) {
         e.preventDefault();
