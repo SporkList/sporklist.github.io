@@ -134,6 +134,7 @@ body, html {
     margin: 0 auto;
     line-height: 48px;
     vertical-align: middle;
+    overflow-x: hidden;
 }
 
 .playlist:hover {
