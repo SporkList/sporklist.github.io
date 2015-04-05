@@ -1,9 +1,10 @@
 function drag(event) {
-	console.log(event);
+	event.dataTransfer.setData("text", event.target.textContent);
 }
 
 function allowDrop(event) {
-	console.log(event);
+	event.preventDefault();
+	event.target.
 }
 
 function drop(event) {

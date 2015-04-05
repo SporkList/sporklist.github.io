@@ -426,7 +426,7 @@ body, html {
     margin: 128px auto;
 }
 
-#trash {
+.trash {
     position: fixed;
     width: 100px;
     height: 100px;
