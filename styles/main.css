@@ -373,10 +373,6 @@ body, html {
     border-bottom: 1px solid #D0D0D0;
 }
 
-#restaurant-search {
-    margin-bottom: 16px;
-}
-
 .restaurant-result {
     display: block;
     width: 42%;
@@ -387,6 +383,7 @@ body, html {
     margin: 0 1rem 1rem;
     border-radius: 3px;
     padding: 10px;
+    margin-top: 16px;
 }
 
 .restaurant-result:hover {
