@@ -354,7 +354,7 @@ body, html {
     user-select:none;
     animation:fly-in-from-left .5s 1s ease both;
     transform-origin:top left;
-    cursor: default;
+    cursor: pointer;
 }
 
 .restaurant-name {
@@ -457,6 +457,18 @@ body, html {
     right: 8px;
     width: 26px;
     height: 26px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url("../images/trash.png");
+    cursor: pointer;
+}
+
+.delete-alt {
+    position: absolute;
+    margin-top: 29px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-image: url("../images/trash.png");
