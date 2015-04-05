@@ -36,11 +36,11 @@ function displaySearchResults(results, status) {
     count = results.length;
     searchResults = [];
     
-    for(r in results) {
-        var request = {
-            placeId: r.place_id
+    for(var i = 0; i < results.length; i += 1) {
+        var request2 = {
+            placeId: results[i].place_id
         };
-        service.getDetails(request, addDetails);
+        service.getDetails(request2, addDetails);
     }
 }
 
