@@ -50,4 +50,8 @@
     $scope.name = "";
     $scope.friendList = [];
   });
+
+  app.controller('sporkCtrl', function($scope) {
+
+  });
 }());
