@@ -16,6 +16,7 @@
       query.withinMiles("location", new Parse.GeoPoint(position.latitude, position.longitude), 50);
       query.find({
         success: function(results) {
+          isMe = true;
           currListId = playlist.id;
           currListName = playlist.get("name");
           updateSporklist(playlist.get("name"), results);
@@ -134,6 +135,7 @@
       query.withinMiles("location", new Parse.GeoPoint(position.latitude, position.longitude), 50);
       query.find({
         success: function(results) {
+          isMe = false;
           updateSporklist(sporklist.get("name"), results);
         },
         error: function(error) {
@@ -146,13 +148,17 @@
   app.controller('sporkCtrl', function($scope) {
     $scope.name = "";
     $scope.restaurants = [];
-    $scope.isMe = true;
 
     $scope.follow = function (obj) {
       window.open(obj.get('url'));
     };
 
     $scope.onDeleteClick = function(restaurant) {
+      if (!isMe) {
+        alert("nice try!");
+        return;
+      }
+
       var lists = restaurant.get("sporklists");
       for (i = 0; i < lists.length; i++) {
         if (lists[i] == currListId) {
