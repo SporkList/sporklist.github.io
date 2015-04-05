@@ -77,7 +77,9 @@ $(document).ready(function() {
     $("#restaurant-search-box").hide();
     $(".restaurant-more").hide();
     setPlaylistHeight();
-    navigator.geolocation.getCurrentPosition(main, main);
+    setTimeout(function() {
+        navigator.geolocation.getCurrentPosition(main, main);
+    }, 600);
 });
 
 $(window).resize(function() {
