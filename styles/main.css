@@ -410,7 +410,7 @@ body, html {
     display: block;
     width: 50%;
     height: 128px;
-    background-color: #FFF;
+    background-color: transparent;
     float: left;
 }
 
