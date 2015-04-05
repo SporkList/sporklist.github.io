@@ -16,6 +16,7 @@
       query.withinMiles("location", new Parse.GeoPoint(position.latitude, position.longitude), 50);
       query.find({
         success: function(results) {
+          currListId = playlist.id;
           updateSporklist(playlist.get("name"), results);
         },
         error: function(error) {
@@ -150,7 +151,15 @@
     };
 
     $scope.onDeleteClick = function(restaurant) {
-      
+      var lists = restaurant.get("sporklists");
+      for (int i = 0; i < lists.length; i++) {
+        if (lists[i] == currListId) {
+          lists[i] = "";
+          break;
+        }
+      }
+
+      resetView();
     }
   });
   
