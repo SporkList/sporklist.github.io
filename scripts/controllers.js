@@ -1,5 +1,5 @@
 (function () {
-  app = angular.module('app',["ngDragDrop"]);
+  app = angular.module('app',[]);
 
   app.controller('PLCtrl',function($scope) {
     /* EDIT THE FOLLOWING FOR REAL DATA */
