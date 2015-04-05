@@ -1,4 +1,4 @@
-function dropCallback(event, index, item, external, type, 'containerType') {
+function dropCallback(event, index, item, external, type, containerType) {
 	item.destroy({
   		success: function(myObject) {
     	// The object was deleted from the Parse Cloud.
