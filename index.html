@@ -53,7 +53,7 @@
             </div>
             <div id="playlists" ng-controller="PLCtrl as cont">
                 <!-- List of playlists -->
-                <div class="playlist-wrapper" ng-repeat="plist in playlists" onmouseenter="mouseenter()" onmouseleave="mouseleave()">
+                <div class="playlist-wrapper" ng-repeat="plist in playlists" ng-mouseenter="mouseenter()" ng-mouseleave="mouseleave()">
                     <div class="delete" ng-click="onDeleteClick(plist)"></div>
                     <div class="playlist" ng-click="onClick(plist)" data-uid="{{plist.id}}" ondragover="dragoverAdd(event)" ondrop="dropAdd(event)" ondragenter="dragenterAdd(event)" ondragleave="dragleaveAdd(event)">{{plist.get("name")}}</div>
                 </div>
