@@ -128,7 +128,7 @@ function updateSearchResults(rest_results) {
     var main = document.getElementById("info-pane");
     var scope = angular.element(main).scope();
 
-    scope.$apply(function() {
+    scope.$apply( function() {
         scope.user = false;
         scope.friend = false;
         scope.sporklist = false;

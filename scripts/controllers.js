@@ -128,7 +128,7 @@
     $scope.restaurants = [];
 
     $scope.follow = function (obj) {
-      window.open = obj.get('url'));
+      window.open = obj.get('url');
     };
   });
   
