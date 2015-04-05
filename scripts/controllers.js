@@ -1,5 +1,5 @@
 (function () {
-  app = angular.module('app',[]);
+  app = angular.module('app',['dndLists']);
 
   app.controller('PLCtrl',function($scope) {
     /* EDIT THE FOLLOWING FOR REAL DATA */
