@@ -135,13 +135,14 @@ function main(loc) {
     position = loc.coords;
     $("#loading-cover").fadeOut(300);
     
-    $(".playlist-wrapper").on('mouseenter mouseleave', '.delete', function(event) {
-        if (event.type == 'mouseenter') {
-            $(this).find(".delete").hide();
-        } else  {
-            $(this).find(".delete").show();
+    $(".playlist-wrapper").hover(
+        function(e) {
+            $scope.$apply(function() { $(this).find('.delete').show(); });
+        },
+        function(e) {
+            $scope.$apply(function() { $(this).find('.delete').hide(); });
         }
-    });
+    );
     
     /* Add functionality to search bar */
     $("#restaurant-search").submit(function(e) {
