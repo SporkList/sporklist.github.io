@@ -41,6 +41,7 @@
      */
     $scope.user = false;
     $scope.friend = false;
+    $scope.sporklist = true;
     $scope.search = false;
     $scope.map = false;
   });

@@ -71,10 +71,10 @@
                         <div class="profile-info">{{name}}</div>
                     </div>
                     <div class="section-title">friends</div>
-                    <div id="my-friends">
+                    <div id="my-friends" ng-repeat="friend in sc.friendList">
                         <div id="friend-picture" class="profile-picture"></div>
-                        <div class="friend-name" ng-repeat="fName in sc.friendList">
-                            {{fName}}
+                        <div class="friend-name">
+                            {{friend.get("name")}}
                         </div>
                     </div>
                 </div> <!-- End of Profile -->
@@ -82,6 +82,16 @@
                 <!-- Profile of a friend -->
                 <div id="friend-profile-box">
                 </div> <!-- End of friend profile -->
+
+                <!-- sporklist -->
+                <div id="sporklist" ng-show="sporklist" ng-controller="sporkCtrl">
+                    <div class="spork-header">{{name}}</div>
+                    <div id="restaurant">
+                        <div class="restaurant-name" ng-repeat="restaurant in restaurants">
+                            {{restaurant.name}}
+                        </div>
+                    </div>
+                </div> <!-- End of sporklist -->
 
                 <!-- Search results -->
                 <div id="restaurant-search-box">

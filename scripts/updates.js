@@ -27,17 +27,10 @@ function getFriends (friendIds) {
     query.find( {
         /* add info to some results */
         success: function (results) {
-
-            var friendList = [];
-	        
-            for(var i=0;i<Math.min(5,results.length);i++) {
-                friendList[i] = results[i].get('name');
-            }
-
             var friendListElem = document.getElementById("my-friends");
             var scope = angular.element(friendListElem).scope();
 
-            scope.$apply(function() {scope.friendList = friendList} );
+            scope.$apply(function() {scope.friendList = results} );
         },
         error: function (error) {
             console.log("You have no friends :( " + error);
