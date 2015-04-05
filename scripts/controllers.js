@@ -13,7 +13,7 @@
 
       query.equalTo("sporklists", playlist.id);
       query.limit(1000);
-      query.withinMiles("location", new Parse.GeoPoint(position.latitude, position.longitude), 10);
+      query.withinMiles("location", new Parse.GeoPoint(position.latitude, position.longitude), 20);
       query.find({
         success: function(results) {
           list = []
