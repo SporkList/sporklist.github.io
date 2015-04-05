@@ -13,7 +13,7 @@ function retrieveSearchResults() {
     if(place == undefined || $("#location-bar").val().replace(" ", "") == "")
         loc = new google.maps.LatLng(position.latitude, position.longitude);
     else
-        loc = new google.maps.LatLng(place.geometry.location.latitude, place.geometry.location.longitude);
+        loc = new google.maps.LatLng(place.geometry.location.lat(), place.geometry.location.lng());
     
     var request = {
         location: loc,
@@ -23,7 +23,7 @@ function retrieveSearchResults() {
         keyword: $("#search-bar").val()
     };
     
-    service.nearbySearch(request, displaySearchResults);
+    //service.nearbySearch(request, displaySearchResults);
 }
 
 /* Callback that FINALLY has our search results */
