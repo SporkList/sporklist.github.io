@@ -25,7 +25,7 @@
     }
 
     $scope.mouseenter = function() {
-      $($scope.children()[0]).css("visibility", "visible");
+      $($(this).children()[0]).css("visibility", "visible");
     }
 
     $scope.onDeleteClick = function(playlist) {
