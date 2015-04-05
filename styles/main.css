@@ -242,8 +242,12 @@ body, html {
 }
 
 #friend-profile-box {
-    position: relative;
-    width: 100%;
+    position: absolute;
+    display: table-column;
+    width: 75%;
+    padding-left: 72px;
+    padding-top: 32px;
+    padding-bottom: 72px;
 }
 
 #friend-sporklists {

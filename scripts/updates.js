@@ -89,10 +89,10 @@ function updateFriend(friend) {
             var list = document.getElementById("friend-profile-box");
             var scope = angular.element(list).scope();
 
-            // scope.$apply(function () {
-            //     scope.sporklists = results;
-            //     scope.name = name;
-            // });
+            scope.$apply(function () {
+                scope.sporklists = results;
+                scope.name = name;
+            });
 
             updateFriendSporklists(results);
         },
