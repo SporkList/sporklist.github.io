@@ -82,6 +82,12 @@ function updateFriend(friend) {
     var name = friend.get("name");
     var picture = friend.get("picture");
 
+    var profile = document.getElementById("friend-profile-box");
+    var scope = angular.element(profile).scope();
+
+    scope.$apply(function() {scope.name = name});
+    $("#my-picture").css("background-image", "url(" + picture + ")");
+
     var sporklist = Parse.Object.extend("Sporklist");
     var query = new Parse.Query(sporklist);
     query.equalTo("author", friend.getUsername());
