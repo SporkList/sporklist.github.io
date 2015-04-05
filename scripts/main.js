@@ -119,7 +119,15 @@ function dropAdd(e) {
             target.set("sporklists", list);
 
             console.log(target);
-            target.save();
+            target.save(null, {
+              success: function(object) {
+              },
+              error: function(object, error) {
+                // Execute any logic that should take place if the save fails.
+                // error is a Parse.Error with an error code and message.
+                alert('Failed to create new object, with error code: ' + error.message);
+              }
+            });
         },
         error: function(error) {
           alert("Error: " + error.code + " " + error.message);
