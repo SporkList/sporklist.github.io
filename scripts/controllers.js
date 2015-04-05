@@ -27,10 +27,6 @@
 
   app.controller('NewPLCtrl', function($scope) {
     $scope.onClick = function() {
-      $("body").click(function() {
-        $("#new-sporklist").css("visibility", "hidden");
-        $("#new-sporklist").val("");
-      });
       $("#new-sporklist").css("visibility", "visible");
       $("#new-sporklist").focus();
       $('#new-sporklist').keyup(function(e){
@@ -64,6 +60,9 @@
               }
             });
 
+            $(this).css("visibility", "hidden");
+            $(this).val("");
+        } else if (e.keyCode == 27) {
             $(this).css("visibility", "hidden");
             $(this).val("");
         }
