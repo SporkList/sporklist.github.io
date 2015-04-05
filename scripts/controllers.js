@@ -35,6 +35,7 @@
             var newList = new sporklist();
             newList.set("name", $("#new-sporklist").val());
             newList.set("author", parseUser.getUsername());
+            newList.save();
 
             $(this).css("visibility", "hidden");
             $(this).val("");
