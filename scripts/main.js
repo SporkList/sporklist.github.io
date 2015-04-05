@@ -137,10 +137,10 @@ function main(loc) {
     
     $(".playlist-wrapper").hover(
         function(e) {
-            $scope.$apply(function() { $(this).find('.delete').show(); });
+            $scope.$apply(function() { alert("FUCK"); $(this).find('.delete').show(); });
         },
         function(e) {
-            $scope.$apply(function() { $(this).find('.delete').hide(); });
+            $scope.$apply(function() { alert("FUCK"); $(this).find('.delete').hide(); });
         }
     );
     
