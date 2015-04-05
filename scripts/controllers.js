@@ -159,6 +159,9 @@
         }
       }
 
+      restaurant.set("sporklists", lists);
+      restaurant.save();
+
       resetView();
     }
   });
