@@ -51,7 +51,7 @@
                 <!-- List of playlists -->
                 <div class="playlist" ng-repeat="plist in playlists" ng-click="onClick(plist)">{{plist.get("name")}}</div>
             </div>
-            <div id="new-playlist-button">new sporklist +</div>
+            <div id="new-playlist-button" ng-controller="NewPLCtrl" ng-click="onClick()">new sporklist +</div>
         </div>
         <!-- End of sidebar -->
 

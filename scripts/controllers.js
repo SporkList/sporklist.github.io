@@ -25,6 +25,10 @@
     }
   });
 
+  app.controller('NewPLCtrl', function($scope) {
+    $scope.onClick() = [];
+  });
+
   app.controller('MainCtrl',function($scope) {
     /* The defaults for the home page.
      * The only thing that should show is the sidebar and the fb login.
