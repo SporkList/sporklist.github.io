@@ -48,7 +48,6 @@
     
         <!-- Trash overlay -->
         <div id="sporklist-trash" class="trash" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="sporklist-trash" class="trash" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
         <!-- Trash overlay -->
 
         <!-- Playlist sidebar -->
@@ -59,7 +58,7 @@
             </div>
             <div id="playlists" ng-controller="PLCtrl as cont">
                 <!-- List of playlists -->
-                <div class="playlist" ng-repeat="plist in playlists" ng-click="onClick(plist)" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">{{plist.get("name")}}</div>
+                <div class="playlist" ng-repeat="plist in playlists" ng-click="onClick(plist)" dnd-draggable="plist">{{plist.get("name")}}</div>
             </div>
             <div id="new-playlist-button" ng-controller="NewPLCtrl" ng-click="onClick()">new sporklist +</div>
         </div>
@@ -112,7 +111,7 @@
                 <!-- sporklist -->
                 <div id="sporklist" ng-show="sporklist" ng-controller="sporkCtrl">
                     <div class="spork-header">{{name}}</div>
-                    <div id="restaurant" ng-repeat="restaurant in restaurants" draggable="true" ondragstart="drag(event)">
+                    <div id="restaurant" ng-repeat="restaurant in restaurants">
                         <div class="restaurant-name">
                             {{restaurant.get("name")}}
                         </div>
@@ -121,7 +120,7 @@
 
                 <!-- Search results -->
                 <div id="restaurant-search-box" ng-show="search" ng-controller="SearchCtrl">
-                    <div class="restaurant-result" ng-repeat="result in results" draggable="true" ondragstart="drag(event)">
+                    <div class="restaurant-result" ng-repeat="result in results">
                         <img class="restaurant-picture" ng-src="{{result.photos[0].getUrl({ maxHeight: '2000px' })}}" />
                         <div class="restaurant-title">{{result.name}}</div>
                         <div class="restaurant-text">
