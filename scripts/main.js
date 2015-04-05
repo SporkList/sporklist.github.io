@@ -43,7 +43,7 @@ function setPlaylistHeight() {
 }
 
 function main(loc) {
-    service = new google.maps.places.PlacesService(/** @type {HTMLInputElement} */(document.getElementById('attributions'));
+    service = new google.maps.places.PlacesService(/** @type {HTMLInputElement} */(document.getElementById('attributions')));
     autocomplete = new google.maps.places.Autocomplete(/** @type {HTMLInputElement} */(document.getElementById('location-bar')), { types: ['geocode'] });
 
     position = loc.coords;
