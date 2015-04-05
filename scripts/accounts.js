@@ -44,6 +44,8 @@ function logIn() {
             updateUserPage(user);
             retrieveSporklists(user);
 
+            $("#logo-header").click(resetView);
+
             $("#login-box").fadeOut(700, function() {
                 mainWindow = document.getElementById("info-pane");
                 scope = angular.element(mainWindow).scope();
