@@ -59,6 +59,8 @@ function shuffle(arr) {
 
 function updateSporklist(name, sporklist) {
 
+    console.log(sporklist);
+
     /* Randomize sporklist */
     sporklist = shuffle(sporklist);
 
@@ -144,3 +146,7 @@ function updateSearchResults(rest_results) {
     });
 }
 
+function follow (restaurantObject) {
+  console.log(restaurantObject);
+  window.open(restaurantObject.get("url"));
+}
