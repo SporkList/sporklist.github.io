@@ -48,7 +48,7 @@
     }
   });
 
-  app.controller('NewPLCtrl', function($scope) {
+  app.controller('13LCtrl', function($scope) {
     $scope.onClick = function() {
       if (parseUser == null) {
         return;
@@ -57,7 +57,7 @@
       $("#new-sporklist").css("visibility", "visible");
       $("#new-sporklist").focus();
       $('#new-sporklist').keyup(function(e){
-        if(e.keyCode == 13) {
+        if(e.keyCode == 13 && $("#new-sporklist").val() != "") {
             var sporklist = Parse.Object.extend("Sporklist");
             var newList = new sporklist();
             newList.set("name", $("#new-sporklist").val());
