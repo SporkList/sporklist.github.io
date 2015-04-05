@@ -57,7 +57,10 @@
             </div>
             <div id="playlists" ng-controller="PLCtrl as cont">
                 <!-- List of playlists -->
-                <div class="playlist" ng-repeat="plist in playlists" ng-click="onClick(plist)">{{plist.get("name")}}</div>
+                <div class="playlist-wrapper" ng-repeat="plist in playlists">
+                    <div class="delete" ng-click="onDeleteClick(plist)"></div>
+                    <div class="playlist" ng-click="onClick(plist)">{{plist.get("name")}}</div>
+                </div>
             </div>
             <div id="new-playlist-button" ng-controller="NewPLCtrl" ng-click="onClick()">new sporklist +</div>
         </div>

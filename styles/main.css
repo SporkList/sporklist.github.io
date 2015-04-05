@@ -135,6 +135,7 @@ body, html {
     line-height: 48px;
     vertical-align: middle;
     overflow-x: hidden;
+    z-index: 1;
 }
 
 .playlist:hover {
@@ -428,4 +429,18 @@ body, html {
     bottom: 1%;
     right: 1%;
     visibility: hidden;
+}
+
+.delete {
+    position: absolute;
+    margin-top: 10px;
+    right: 8px;
+    width: 26px;
+    height: 26px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url("../images/trash.png");
+    visibility: hidden;
+    z-index: 2;
+    cursor: pointer;
 }

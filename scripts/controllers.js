@@ -23,6 +23,10 @@
         }
       });
     }
+
+    $scope.onDeleteClick = function(playlist) {
+      console.log("asdf");
+    }
   });
 
   app.controller('NewPLCtrl', function($scope) {
