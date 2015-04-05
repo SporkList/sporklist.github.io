@@ -357,6 +357,7 @@ body, html {
 }
 
 .restaurant-name {
+    cursor: pointer;
     position: absolute;
     text-align: left;
     font-size: 40px;
