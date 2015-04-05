@@ -33,7 +33,7 @@ function displaySearchResults(results, status) {
         return;
     }
     
-    count = results.length();
+    count = results.length;
     searchResults = [];
     
     for(r in results) {
