@@ -136,11 +136,11 @@ function main(loc) {
     $("#loading-cover").fadeOut(300);
     
     $(".playlist-wrapper").hover(
-        function(e) {
-            $scope.$apply(function() { alert("FUCK"); $(this).find('.delete').show(); });
+        function() {
+            $scope.$apply(function() { $(this).find('.delete').show(); });
         },
-        function(e) {
-            $scope.$apply(function() { alert("FUCK"); $(this).find('.delete').hide(); });
+        function() {
+            $scope.$apply(function() { $(this).find('.delete').hide(); });
         }
     );
     
