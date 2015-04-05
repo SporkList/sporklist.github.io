@@ -52,7 +52,16 @@ function getFriends (friendIds) {
 
 }
 
+function shuffle(arr) {
+    for (var j, x, i=arr.length;i;j = Math.floor(Math.random() * i), x = arr[--i],arr[i] = arr[j], arr[j] = x);
+    return arr;
+}
+
 function updateSporklist(name, sporklist) {
+
+    /* Randomize sporklist */
+    sporklist = shuffle(sporklist);
+
     var main = document.getElementById("info-pane");
     var scope = angular.element(main).scope();
 
