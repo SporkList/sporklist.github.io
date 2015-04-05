@@ -45,7 +45,7 @@
                 // The object was not refreshed successfully.
                 // error is a Parse.Error with an error code and message.
               }
-            });)
+            });
 
             $(this).css("visibility", "hidden");
             $(this).val("");
