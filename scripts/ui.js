@@ -1,12 +1,15 @@
-function drag(event) {
-	event.dataTransfer.setData("text", event.target.textContent);
+function dropCallback(event, index, item, external, type, 'containerType') {
+	item.destroy({
+  		success: function(myObject) {
+    	// The object was deleted from the Parse Cloud.
+  	},
+  	error: function(myObject, error) {
+    	// The delete failed.
+    	// error is a Parse.Error with an error code and message.
+  		}
+	});
 }
 
-function allowDrop(event) {
-	event.preventDefault();
-	event.target.
-}
-
-function drop(event) {
-	console.log(event);
+function onMove() {
+	$(".trash").css("visibility", "visible");
 }
