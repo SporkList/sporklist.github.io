@@ -96,7 +96,7 @@ function dropAdd(e) {
     
     /* Integrate with shit here */
     var name = choice.name;
-    var location = new Parse.GeoPoint({latitude: choice.geometry.location.lat(), longitude: choice.geometry.location.lng()});
+    var loc = new Parse.GeoPoint({latitude: choice.geometry.location.lat(), longitude: choice.geometry.location.lng()});
 
     var restaurant = Parse.Object.extend("Restaurant");
     var query = new Parse.Query(restaurant);
@@ -108,7 +108,7 @@ function dropAdd(e) {
                 target = new restaurant();
                 target.set("place_id", pid);
                 target.set("name", name);
-                target.set("locaiton", location);
+                target.set("locaiton", loc);
                 target.set("sporklists", []);
             } else {
                 target = results[0];
@@ -118,6 +118,7 @@ function dropAdd(e) {
             list.push(uid);
             target.set("sporklists", list);
 
+            console.log(target);
             target.save();
         },
         error: function(error) {
