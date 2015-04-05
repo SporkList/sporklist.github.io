@@ -27,6 +27,10 @@
 
   app.controller('NewPLCtrl', function($scope) {
     $scope.onClick = function() {
+      $("body").click(function() {
+        $("#new-sporklist").css("visibility", "hidden");
+        $("#new-sporklist").val("");
+      });
       $("#new-sporklist").css("visibility", "visible");
       $("#new-sporklist").focus();
       $('#new-sporklist').keyup(function(e){
