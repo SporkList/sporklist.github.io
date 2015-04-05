@@ -31,6 +31,18 @@
       $scope.mouseleave = function() {
         $(this).children('.delete').hide();
       }
+
+      $scope.onDeleteClick = function(plist) {
+        plist.destroy({
+          success: function(myObject) {
+            retrieveSporklists(parseUser);
+          },
+          error: function(myObject, error) {
+            // The delete failed.
+            // error is a Parse.Error with an error code and message.
+          }
+        });
+      }
     }
 
     $scope.mouseenter = function() {
@@ -146,3 +158,20 @@
   });
 
 }());
+
+function retrieveSporklists(user) {
+    var sporklist = Parse.Object.extend("Sporklist");
+    var query = new Parse.Query(sporklist);
+
+    query.equalTo("author", user.getUsername());
+    query.limit(1000);
+
+    query.find({
+        success: function(results) {
+            updateSporklists(results);
+        },
+        error: function(error) {
+            alert("Error: " + error.code + " " + error.message);
+        }
+    });
+}
