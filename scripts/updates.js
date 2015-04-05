@@ -30,11 +30,6 @@ function updateFriendSporklists (sporklists, position) {
         scope.search = false;
         scope.map = false;   
     });
-
-    var list = document.getElementById("friend-profile-box");
-    var scope = angular.element(list).scope();
-
-    scope.$apply(function () {scope.sporklists = sporklists});
 }
 
 function getFriends (friendIds) {
@@ -82,11 +77,7 @@ function updateFriend(friend) {
     var name = friend.get("name");
     var picture = friend.get("picture");
 
-    var profile = document.getElementById("friend-profile-box");
-    var scope = angular.element(profile).scope();
-
-    scope.$apply(function() {scope.name = name});
-    $("#my-picture").css("background-image", "url(" + picture + ")");
+    $("#friend-main-picture").css("background-image", "url(" + picture + ")");
 
     var sporklist = Parse.Object.extend("Sporklist");
     var query = new Parse.Query(sporklist);
@@ -95,6 +86,14 @@ function updateFriend(friend) {
 
     query.find({
         success: function(results) {
+            var list = document.getElementById("friend-profile-box");
+            var scope = angular.element(list).scope();
+
+            scope.$apply(function () {
+                scope.sporklists = results;
+                scope.name = name;
+            });
+
             updateFriendSporklists(results);
         },
         error: function(error) {

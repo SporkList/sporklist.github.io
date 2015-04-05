@@ -258,6 +258,13 @@ body, html {
     height: 150px;
 }
 
+#friend-main-picture {
+    display: table-cell;
+    background-size: 150px 150px;
+    width: 150px;
+    height: 150px;
+}
+
 #friend-picture {
     background-size: 64px 64px;
     position: absolute;
