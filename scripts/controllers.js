@@ -29,7 +29,7 @@
     $scope.onClick = function() {
       $("#new-sporklist").css("visibility", "visible");
       $("#new-sporklist").focus();
-      $(body).click(function() {
+      $("body").click(function() {
         $(this).css("visibility", "hidden");
         $(this).val("");
       });
