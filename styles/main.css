@@ -270,14 +270,11 @@ body {
 
 /* sporklist */
 
-#sporklist {
-
-}
-
 .spork-header {
     text-align: left;
     margin-left: 72px;
     margin-bottom: 24px;
+    margin-top: 24px;
     font-family: roboto-medium;
     font-size: 56px;
     font-weight: bolder;
