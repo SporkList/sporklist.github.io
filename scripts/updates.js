@@ -12,7 +12,7 @@ function updateUserPage (user) {
     getFriends(friends);
 }
 
-function updateSporklists (sporklists, position) {
+function updateSporklists (sporklists) {
     var sidebarList = document.getElementById("playlists");
     var scope = angular.element(sidebarList).scope();
 
@@ -112,6 +112,23 @@ function resetView () {
         scope.sporklist = false;
         scope.search = false;
         scope.map = false;
+    });
+}
+
+function retrieveSporklists(user) {
+    var sporklist = Parse.Object.extend("Sporklist");
+    var query = new Parse.Query(sporklist);
+
+    query.equalTo("author", user.getUsername());
+    query.limit(1000);
+
+    query.find({
+        success: function(results) {
+            updateSporklists(results);
+        },
+        error: function(error) {
+            alert("Error: " + error.code + " " + error.message);
+        }
     });
 }
 
