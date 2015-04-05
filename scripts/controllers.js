@@ -29,10 +29,10 @@
     $scope.onClick = function() {
       $("#new-sporklist").css("visibility", "visible");
       $("#new-sporklist").focus();
-      $("body").click(function() {
-        $(this).css("visibility", "hidden");
-        $(this).val("");
-      });
+      // $("body").click(function() {
+      //   $(this).css("visibility", "hidden");
+      //   $(this).val("");
+      // });
       $('#new-sporklist').keyup(function(e){
         if(e.keyCode == 13) {
             var sporklist = Parse.Object.extend("Sporklist");
