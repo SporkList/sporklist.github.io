@@ -132,7 +132,7 @@
 
       query.equalTo("sporklists", sporklist.id);
       query.limit(1000);
-      query.withinMiles("location", new Parse.GeoPoint(position.latitude, position.longitude), 50);
+      // query.withinMiles("location", new Parse.GeoPoint(position.latitude, position.longitude), 50);
       query.find({
         success: function(results) {
           isMe = false;
