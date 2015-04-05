@@ -89,6 +89,7 @@ body, html {
     text-align: center;
     line-height: 84px;
     vertical-align: middle;
+    cursor: pointer;
 }
 
 #logo-img {
