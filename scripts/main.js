@@ -5,9 +5,14 @@ var autocomplete = null;
 
 /* In the case of no location name, we use the user's current location */
 function retrieveSearchResults() {
+    var loc;
     var place = autocomplete.getPlace();
-    alert(place.toSource());
-    var loc = new google.maps.LatLng(position.latitude, position.longitude);
+    
+    if(place == undefined || $("#location-bar").val().replace(" ", "") == "")
+        loc = new google.maps.LatLng(position.latitude, position.longitude);
+    else
+        loc = new google.maps.LatLng(place.geometry.location.latitude, place.geometry.location.longitude);
+    
     var request = {
         location: loc,
         radius: '8000',
@@ -15,6 +20,7 @@ function retrieveSearchResults() {
         key: 'AIzaSyCnk5Oo0joyYzlR4BVBZsDR2aUteESG0MY',
         keyword: $("#search-bar").val()
     };
+    
     service.nearbySearch(request, displaySearchResults);
 }
 

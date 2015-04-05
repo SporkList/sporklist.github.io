@@ -391,7 +391,7 @@ body, html {
 .restaurant-text {
     display: block;
     height: 80px;
-    font: 14px "robotolight";
+    font: 13px "robotolight";
     text-align: left;
     padding-left: 16px;
 }
