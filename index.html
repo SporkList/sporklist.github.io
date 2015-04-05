@@ -31,6 +31,7 @@
         <script src="scripts/updates.js"></script>
         <script src="scripts/controllers.js"></script>
         <script src="scripts/accounts.js"></script>
+        <script src="scripts/ui.js"></script>
     </head>
 
     <body>
@@ -44,7 +45,10 @@
         <input id="new-sporklist" type="text" placeholder="Enter a name for your list" value=""></input>
         <!-- New sporklist overlay -->
     
-    
+        <!-- Trash overlay -->
+        <div id="trash" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <!-- Trash overlay -->
+
         <!-- Playlist sidebar -->
         <div id="playlists-pane">
             <div id="logo-header" onclick="resetView()">
@@ -107,7 +111,7 @@
                 <!-- sporklist -->
                 <div id="sporklist" ng-show="sporklist" ng-controller="sporkCtrl">
                     <div class="spork-header">{{name}}</div>
-                    <div id="restaurant" ng-repeat="restaurant in restaurants">
+                    <div id="restaurant" ng-repeat="restaurant in restaurants" draggable="true" ondragstart="drag(event)">
                         <div class="restaurant-name">
                             {{restaurant.get("name")}}
                         </div>

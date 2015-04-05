@@ -425,3 +425,16 @@ body, html {
     width: 280px;
     margin: 128px auto;
 }
+
+#trash {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    background-image: url("../images/trash.png");
+    background-size: 100% 100%;
+    z-index: 10000;
+    background-repeat: no-repeat;
+    bottom: 1%;
+    right: 1%;
+    visibility: hidden;
+}
