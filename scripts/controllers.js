@@ -58,7 +58,7 @@
       var restaurant = Parse.Object.extend("Restaurant");
       var query = new Parse.Query(restaurant);
 
-      query.equalTo("sporklists", sporklist.id);
+      query.equalTo("sporklists", playlist.id);
       query.limit(1000);
       query.withinMiles("location", new Parse.GeoPoint(position.latitude, position.longitude), 30);
       query.find({
@@ -69,7 +69,7 @@
             list.push(results[i]);
           }
 
-          updateSporklist(sporklist.get("name"), list);
+          updateSporklist(playlist.get("name"), list);
         },
         error: function(error) {
           alert("Error: " + error.code + " " + error.message);
