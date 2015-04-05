@@ -68,7 +68,7 @@ function setPlaylistHeight() {
 
 function dragstartAdd(e) {
     e.dataTransfer.effectAllowed = 'copy';
-    e.dataTransfer.setData('pid', this.getAttribute('data-uid'));
+    e.dataTransfer.setData('pid', e.target.getAttribute('data-uid'));
 }
 
 function dragoverAdd(e) {
@@ -77,13 +77,13 @@ function dragoverAdd(e) {
     return false;
 }
 
-function dragenterAdd() { $(this).addClass('over'); }
-function dragleaveAdd() { $(this).removeClass('over'); }
+function dragenterAdd(e) { $(e.target).addClass('over'); }
+function dragleaveAdd(e) { $(e.target).removeClass('over'); }
 
 function dropAdd(e) {
     if (e.stopPropagation) e.stopPropagation();
     var pid = e.dataTransfer.getData('pid');
-    var uid = this.getAttribute('data-uid');
+    var uid = e.target.getAttribute('data-uid');
     
     var choice;
     for(var i = 0; i < searchResults.length; i += 1) {
