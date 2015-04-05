@@ -20,6 +20,8 @@ function logIn() {
 
     Parse.FacebookUtils.logIn("user_friends", {
         success: function(user) {
+            parseUser = user;
+
             FB.api("/me", function(response) {
                 user.set("name", response.name);
                 user.set("facebook_id", response.id);

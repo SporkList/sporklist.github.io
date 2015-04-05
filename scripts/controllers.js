@@ -27,7 +27,19 @@
 
   app.controller('NewPLCtrl', function($scope) {
     $scope.onClick = function() {
-      console.log("this");
+      $("#new-sporklist").css("visibility", "visible");
+      $("#new-sporklist").focus();
+      $('#new-sporklist').keyup(function(e){
+        if(e.keyCode == 13) {
+            var sporklist = Parse.Object.extend("Sporklist");
+            var newList = new sporklist();
+            newList.set("name", $("#new-sporklist").val());
+            newList.set("author", parseUser.getUsername());
+
+            $(this).css("visibility", "hidden");
+            $(this).val("");
+        }
+      });
     };
   });
 

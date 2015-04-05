@@ -1,3 +1,4 @@
+var parseUser = null;
 var position = null;
 var googlePlaceReq = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
 var googleGeoReq = "https://maps.googleapis.com/maps/api/geocode/json";
