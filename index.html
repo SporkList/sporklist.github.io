@@ -120,7 +120,7 @@
                 <!-- Search results -->
                 <div id="restaurant-search-box" ng-show="search" ng-controller="SearchCtrl">
                     <div class="restaurant-result" ng-repeat="result in results">
-                        <img class="restaurant-picture" ng-src="{{result.photos[0].getUrl({ maxHeight: '2000px' })}}" />
+                        <img class="restaurant-picture" ng-src="{{result.photos[1].getUrl({ maxHeight: '2000px' })}}" />
                         <div class="restaurant-title">{{result.name}}</div>
                         <div class="restaurant-text">
                             {{result.formatted_address}}<br>
