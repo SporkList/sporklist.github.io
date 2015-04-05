@@ -1,4 +1,4 @@
-var location;
+var position;
 var searchResults;
 var googlePlaceReq = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
 var googleGeoReq = "https://maps.googleapis.com/maps/api/geocode/json";
@@ -7,9 +7,9 @@ var googleRadius = "&radius=8000"
 var placeTypes = "&types=restaurant|meal_delivery|meal_takeaway|cafe";
 
 /* In the case of no location name, we use the user's current location */
-function retrieveSearchResults(position) {
+function retrieveSearchResults() {
     var term = "&keyword=" + $("#search-bar").val();
-    var loc = "&location=" + position.coords.latitude + "," + position.coords.longitude;
+    var loc = "&location=" + position.latitude + "," + position.longitude;
     $.get(googlePlaceReq + googleAPIkey + googleRadius + placeTypes + loc + term, displaySearchResults);
 }
 
@@ -55,10 +55,9 @@ function setPlaylistHeight() {
     $("#playlists").css('height', window.innerHeight - sum);
 }
 
-$(document).ready(function() {
-    setPlaylistHeight();
-    $("#restaurant-search-box").hide();
-    $(".restaurant-more").hide();
+function main(loc) {
+    position = loc.coords;
+    $("#loading-cover").fadeOut(300);
     
     /* Add functionality to search bar */
     $("#restaurant-search").submit(function(e) {
@@ -66,12 +65,19 @@ $(document).ready(function() {
         $("#content-box").children().fadeOut(100);
         
         if($("#location-bar").val().replace(" ", "") == "" && navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(retrieveSearchResults);
+            retrieveSearchResults();
         } else {
             var addr = "&address=" + $("#location-bar").val().replace(" ", "+");
             $.get(googleGeoReq + googleAPIkey + addr, locationLookupComplete);
         }
     });
+}
+
+$(document).ready(function() {
+    $("#restaurant-search-box").hide();
+    $(".restaurant-more").hide();
+    setPlaylistHeight();
+    navigator.geolocation.getCurrentPosition(main, main);
 });
 
 $(window).resize(function() {
