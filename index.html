@@ -72,7 +72,7 @@
                     </div>
                     <div class="section-title">friends</div>
                     <div id="my-friends" ng-repeat="friend in friendList">
-                        <img id="friend-picture" class="profile-picture" />
+                        <div id="friend-picture" class="profile-picture" ng-style="{'background-image': 'url({{friend.get('picture')}})'}"></div>
                         <div class="friend-name">
                             {{friend.get("name")}}
                         </div>
