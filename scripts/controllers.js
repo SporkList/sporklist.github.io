@@ -13,23 +13,20 @@
 
       query.equalTo("sporklists", playlist.id);
       query.limit(1000);
+      query.withinMiles("location", new Parse.GeoPoint(position.latitude, position.longitude), 10);
+      query.find({
+        success: function(results) {
+          list = []
 
-      navigator.geolocation.getCurrentPosition(function(location) {
-          query.withinMiles("location", new Parse.GeoPoint(location.coords.latitude, location.coords.longitude), 5);
-          query.find({
-            success: function(results) {
-              list = []
+          for (var i = 0; i < results.length; i++) { 
+            list.push(results[i]);
+          }
 
-              for (var i = 0; i < results.length; i++) { 
-                list.push(results[i]);
-              }
-
-              updateSporklist(playlist.get("name"), list);
-            },
-            error: function(error) {
-              alert("Error: " + error.code + " " + error.message);
-            }
-          });
+          updateSporklist(playlist.get("name"), list);
+        },
+        error: function(error) {
+          alert("Error: " + error.code + " " + error.message);
+        }
       });
     }
   });
