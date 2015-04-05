@@ -417,3 +417,8 @@ body, html {
     width: 280px;
     margin: 128px auto;
 }
+
+#x {
+  text-align: right;
+  color: #888888;
+}
