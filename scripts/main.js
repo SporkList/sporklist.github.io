@@ -63,7 +63,7 @@ function main(loc) {
             retrieveSearchResults();
         } else {
             var addr = "&address=" + $("#location-bar").val().replace(" ", "+");
-            $.get(googleGeoReq + googleAPIkey + addr, locationLookupComplete);
+            $.get(googleGeoReq + googleAPIkey + addr, lookupLocationComplete);
         }
     });
 }
