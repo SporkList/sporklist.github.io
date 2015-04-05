@@ -20,8 +20,8 @@ function updateSporklists (sporklists, position) {
 }
 
 function updateFriendSporklists (sporklists, position) {
-    var list = document.getElementById("friend-profile-box");
-    var scope = angular.element(list).scope();
+    var main = document.getElementById("info-pane");
+    var scope = angular.element(main).scope();
 
     scope.$apply(function() {
         scope.user = false;
@@ -30,6 +30,9 @@ function updateFriendSporklists (sporklists, position) {
         scope.search = false;
         scope.map = false;   
     });
+
+    var list = document.getElementById("friend-profile-box");
+    var scope = angular.element(list).scope();
 
     scope.$apply(function () {scope.sporklists = sporklists});
 }
