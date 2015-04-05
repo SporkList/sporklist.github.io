@@ -145,7 +145,11 @@ function main(loc) {
     });
 
     Mousetrap.bind("up up down down left right left right b a enter", function() {
-        $("#the_truth").fadeIn(1000);
+        $("#the_truth").fadeIn(2000);
+    });
+
+    Mousetrap.bind("esc", function() {
+        $("#the_truth").fadeOut(1000);
     });
 }
 
