@@ -1,7 +1,7 @@
 var position = null;
 var googlePlaceReq = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
 var googleGeoReq = "https://maps.googleapis.com/maps/api/geocode/json";
-var googleAPIkey = "?key=AIzaSyDjI5DwNn9q_yDdi4_-jqv0V4aIjsr39oc";
+var googleAPIkey = "?key=AIzaSyCnk5Oo0joyYzlR4BVBZsDR2aUteESG0MY";
 var googleRadius = "&radius=8000";
 var placeTypes = "&types=restaurant|meal_delivery|meal_takeaway|cafe";
 
