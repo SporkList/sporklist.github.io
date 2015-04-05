@@ -474,3 +474,20 @@ body, html {
     background-image: url("../images/trash.png");
     cursor: pointer;
 }
+
+#the_truth {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    text-align: center;
+    padding-top: 20%;
+    background-color: black;
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 72px;
+    font-weight: bolder;
+    opacity: 1;
+    z-index: 99999;
+    display: none;
+}
