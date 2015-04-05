@@ -6,7 +6,7 @@ var autocomplete = null;
 /* In the case of no location name, we use the user's current location */
 function retrieveSearchResults() {
     var place = autocomplete.getPlace();
-    alert(place);
+    alert(place.toSource());
     var loc = new google.maps.LatLng(position.latitude, position.longitude);
     var request = {
         location: loc,
