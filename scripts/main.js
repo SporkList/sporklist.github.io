@@ -96,7 +96,7 @@ function dropAdd(e) {
     
     /* Integrate with shit here */
     var name = choice.name;
-    var location = new Parse.GeoPoint({latitude: choice.geometry.location.lat(), choice.geometry.location.lng()});
+    var location = new Parse.GeoPoint({latitude: choice.geometry.location.lat(), longitude: choice.geometry.location.lng()});
 
     console.log(uid);
 }
