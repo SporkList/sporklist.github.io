@@ -148,6 +148,10 @@
     $scope.follow = function (obj) {
       window.open(obj.get('url'));
     };
+
+    $scope.onDeleteClick = function(restaurant) {
+      
+    }
   });
   
   app.controller('SearchCtrl', function($scope) {
