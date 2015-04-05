@@ -108,7 +108,7 @@ function dropAdd(e) {
                 target = new restaurant();
                 target.set("place_id", pid);
                 target.set("name", name);
-                target.set("locaiton", loc);
+                target.set("location", loc);
                 target.set("sporklists", []);
             } else {
                 target = results[0];
@@ -118,16 +118,7 @@ function dropAdd(e) {
             list.push(uid);
             target.set("sporklists", list);
 
-            console.log(target);
-            target.save(null, {
-              success: function(object) {
-              },
-              error: function(object, error) {
-                // Execute any logic that should take place if the save fails.
-                // error is a Parse.Error with an error code and message.
-                alert('Failed to create new object, with error code: ' + error.message);
-              }
-            });
+            target.save();
         },
         error: function(error) {
           alert("Error: " + error.code + " " + error.message);
