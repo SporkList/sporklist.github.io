@@ -98,7 +98,35 @@ function dropAdd(e) {
     var name = choice.name;
     var location = new Parse.GeoPoint({latitude: choice.geometry.location.lat(), longitude: choice.geometry.location.lng()});
 
-    console.log(uid);
+    var restaurant = Parse.Object.extend("Restaurant");
+    var query = Parse.Query(restaurant);
+    query.equalTo("place_id", pid);
+    query.find({
+        success: function(results) {
+            var target;
+            if (reslts.length == 0) {
+                target = Parse.Object.extend("Restaurant");
+                target.set("place_id", pid);
+                target.set("name", name);
+                target.set("locaiton", location);
+                target.set("sporklists", []);
+            } else {
+                target = results[0];
+            }
+
+            var list = target.get("sporklists");
+            list.push(uid);
+            target.set("sporklists", list);
+
+            target.save();
+        }
+
+
+        },
+        error: function(error) {
+          alert("Error: " + error.code + " " + error.message);
+        }
+    });
 }
 
 function main(loc) {
