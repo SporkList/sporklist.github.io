@@ -62,7 +62,7 @@
       $("#new-sporklist").css("visibility", "visible");
       $("#new-sporklist").focus();
       $('#new-sporklist').keyup(function(e){
-        if(e.keyCode == 13 && $("#new-sporklist").val()) != "") {
+        if(e.keyCode == 13 && $("#new-sporklist").val() != "") {
             var sporklist = Parse.Object.extend("Sporklist");
             var newList = new sporklist();
             newList.set("name", $("#new-sporklist").val());
