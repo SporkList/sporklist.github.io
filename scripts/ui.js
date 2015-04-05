@@ -11,5 +11,6 @@ function dropCallback(event, index, item, external, type, containerType) {
 }
 
 function onMove() {
+	console.log("called");
 	$(".trash").css("visibility", "visible");
 }
