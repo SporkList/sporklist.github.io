@@ -38,8 +38,7 @@
             retrieveSporklists(parseUser);
           },
           error: function(myObject, error) {
-            // The delete failed.
-            // error is a Parse.Error with an error code and message.
+            console.log(error);
           }
         });
       }
