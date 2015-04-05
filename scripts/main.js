@@ -119,9 +119,6 @@ function dropAdd(e) {
             target.set("sporklists", list);
 
             target.save();
-        }
-
-
         },
         error: function(error) {
           alert("Error: " + error.code + " " + error.message);
