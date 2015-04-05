@@ -48,7 +48,7 @@
     }
   });
 
-  app.controller('13LCtrl', function($scope) {
+  app.controller('newPLCtrl', function($scope) {
     $scope.onClick = function() {
       if (parseUser == null) {
         return;
