@@ -152,7 +152,7 @@
 
     $scope.onDeleteClick = function(restaurant) {
       var lists = restaurant.get("sporklists");
-      for (int i = 0; i < lists.length; i++) {
+      for (i = 0; i < lists.length; i++) {
         if (lists[i] == currListId) {
           lists[i] = "";
           break;
