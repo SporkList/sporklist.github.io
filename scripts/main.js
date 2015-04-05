@@ -134,7 +134,6 @@ function main(loc) {
 
     position = loc.coords;
     $("#loading-cover").fadeOut(300);
-    $(".delete").hide();
     
     /* Add functionality to search bar */
     $("#restaurant-search").submit(function(e) {

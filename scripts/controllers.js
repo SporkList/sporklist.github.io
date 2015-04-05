@@ -22,6 +22,14 @@
           alert("Error: " + error.code + " " + error.message);
         }
       });
+
+      $scope.mouseenter = function() {
+        $(this).children('.delete').show();
+      }
+
+      $scope.mouseleave = function() {
+        $(this).children('.delete').hide();
+      }
     }
 
     $scope.mouseenter = function() {
