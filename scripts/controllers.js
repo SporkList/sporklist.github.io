@@ -70,5 +70,9 @@
     $scope.name = "";
     $scope.restaurants = [];
   });
+  
+  app.controller('SearchCtrl', function($scope) {
+    $scope.results = [];
+  });
 
 }());

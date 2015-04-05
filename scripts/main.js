@@ -1,5 +1,4 @@
 var position = null;
-var searchResults = null;
 var googlePlaceReq = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
 var googleGeoReq = "https://maps.googleapis.com/maps/api/geocode/json";
 var googleAPIkey = "?key=AIzaSyDjI5DwNn9q_yDdi4_-jqv0V4aIjsr39oc";
@@ -17,7 +16,7 @@ function retrieveSearchResults() {
 function lookupLocationComplete(data) {
     lookupResults = JSON && JSON.parse(data) || $.parseJSON(data);
     if(lookupResults.status != "OK") {
-        alert("Failed to perform search because: " + searchResults.status);
+        alert("Failed to perform search because: " + lookupResults.status);
         return;
     }
     var term = "&keyword=" + $("#search-bar").val();
@@ -34,9 +33,7 @@ function displaySearchResults(data) {
         return;
     }
     
-    /*** Do shit with data here ***/
-    
-    $("#restaurant-search-box").fadeIn(100);
+    updateSearchResults(searchResults);
 }
 
 /* Hack for having a perfect playlist height */
@@ -62,8 +59,6 @@ function main(loc) {
     /* Add functionality to search bar */
     $("#restaurant-search").submit(function(e) {
         e.preventDefault();
-        $("#content-box").children().fadeOut(100);
-        
         if($("#location-bar").val().replace(" ", "") == "" && navigator.geolocation) {
             retrieveSearchResults();
         } else {
@@ -78,8 +73,6 @@ function locError(locErr) {
 }
 
 $(document).ready(function() {
-    $("#restaurant-search-box").hide();
-    $(".restaurant-more").hide();
     setPlaylistHeight();
     setTimeout(function() {
         navigator.geolocation.getCurrentPosition(main, locError);

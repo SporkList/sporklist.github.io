@@ -114,3 +114,23 @@ function resetView () {
         scope.map = false;
     });
 }
+
+function updateSearchResults(rest-results) {
+    var main = document.getElementById("info-pane");
+    var scope = angular.element(main).scope();
+
+    scope.$apply(function() {
+        scope.user = false;
+        scope.friend = false;
+        scope.sporklist = false;
+        scope.search = true;
+        scope.map = false;   
+    });
+    
+    var result-box = document.getElementById("restauraunt-search-box");
+    var scope = angular.element(result-box).scope();
+
+    scope.$apply(function() {
+        scope.results = rest-results;
+    });
+}

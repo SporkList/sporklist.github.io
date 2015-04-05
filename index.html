@@ -110,7 +110,11 @@
                 </div> <!-- End of sporklist -->
 
                 <!-- Search results -->
-                <div id="restaurant-search-box">
+                <div id="restaurant-search-box" ng-show="search" ng-controller="SearchCtrl">
+                    <div class="restaurant-result" ng-repeat="result in results">
+                        <div class="restaurant-title">{{result.results.name}}</div>
+                        <div class="restaurant-text">{{result.results.name}}</div>
+                    </div>
                 </div>
                 <!-- End of search results -->
 
