@@ -136,10 +136,10 @@ function main(loc) {
     $("#loading-cover").fadeOut(300);
     
     $(".playlist-wrapper").hover(
-        function(e) {
+        function() {
             $scope.$apply(function() { $(this).find('.delete').show(); });
         },
-        function(e) {
+        function() {
             $scope.$apply(function() { $(this).find('.delete').hide(); });
         }
     );
