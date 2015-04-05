@@ -115,7 +115,7 @@ function resetView () {
     });
 }
 
-function updateSearchResults(rest-results) {
+function updateSearchResults(rest_results) {
     var main = document.getElementById("info-pane");
     var scope = angular.element(main).scope();
 
@@ -127,10 +127,10 @@ function updateSearchResults(rest-results) {
         scope.map = false;   
     });
     
-    var result-box = document.getElementById("restauraunt-search-box");
-    var scope = angular.element(result-box).scope();
+    var result_box = document.getElementById("restauraunt-search-box");
+    var scope = angular.element(result_box).scope();
 
     scope.$apply(function() {
-        scope.results = rest-results;
+        scope.results = rest_results;
     });
 }
