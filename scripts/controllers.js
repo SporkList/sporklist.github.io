@@ -24,13 +24,12 @@
         }
       });
 
-      $scope.mouseenter = function() {
-        console.log("asdf");
-        $(this).children('.delete').show();
+      $scope.onMouseEnter = function(e) {
+          this.firstChild.style.visibility='visible';
       }
 
-      $scope.mouseleave = function() {
-        $(this).children('.delete').hide();
+      $scope.onMouseLeave = function(e) {
+          this.firstChild.style.visibility='hidden';
       }
 
       $scope.onDeleteClick = function(plist) {
@@ -45,10 +44,6 @@
           }
         });
       }
-    }
-
-    $scope.mouseenter = function() {
-      $($(this).children()[0]).css("visibility", "visible");
     }
   });
 
