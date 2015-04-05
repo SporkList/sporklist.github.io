@@ -53,6 +53,28 @@
   app.controller('FriendCtrl', function($scope) {
     $scope.name = "";
     $scope.sporklists = [];
+
+    $scope.onClick = function(sporklist) {
+      var restaurant = Parse.Object.extend("Restaurant");
+      var query = new Parse.Query(restaurant);
+
+      query.equalTo("sporklists", sporklist.id);
+      query.limit(1000);
+      query.withinMiles("location", new Parse.GeoPoint(position.latitude, position.longitude), 30);
+      query.find({
+        success: function(results) {
+          list = []
+
+          for (var i = 0; i < results.length; i++) { 
+            list.push(results[i]);
+          }
+
+          updateSporklist(sporklist.get("name"), list);
+        },
+        error: function(error) {
+          alert("Error: " + error.code + " " + error.message);
+        }
+    }
   })
 
   app.controller('sporkCtrl', function($scope) {
