@@ -86,11 +86,9 @@
                 <!-- sporklist -->
                 <div id="sporklist" ng-show="sporklist" ng-controller="sporkCtrl">
                     <div class="spork-header">{{name}}</div>
-                    <div id="restaurant">
                         <div class="restaurant-name" ng-repeat="restaurant in restaurants">
-                            {{restaurant.name}}
+                            {{restaurant.get("name")}}
                         </div>
-                    </div>
                 </div> <!-- End of sporklist -->
 
                 <!-- Search results -->

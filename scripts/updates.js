@@ -40,8 +40,6 @@ function getFriends (friendIds) {
 }
 
 function updateSporklist(name, sporklist) {
-
-    console.log(sporklist);
     var main = document.getElementById("info-pane");
     var scope = angular.element(main).scope();
 
@@ -59,8 +57,5 @@ function updateSporklist(name, sporklist) {
     scope.$apply(function() {
         scope.name = name;
         scope.restaurants = sporklist;
-
-        console.log(sporklist);
-        console.log(scope.restaurants);
     });
 }
