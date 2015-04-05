@@ -144,6 +144,14 @@ function main(loc) {
     });
 }
 
+function onMouseEnter(e) {
+    this.firstChild.style.visibility='visible';
+}
+
+function onMouseLeave(e) {
+    this.firstChild.style.visibility='hidden';
+}
+
 function locError(locErr) {
     alert("You cannot use this site because we could not get your geolocation. The error we got was: " + locErr.code);
 }
