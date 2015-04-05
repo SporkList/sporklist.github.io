@@ -17,6 +17,7 @@
       query.find({
         success: function(results) {
           currListId = playlist.id;
+          currListName = playlist.get("name");
           updateSporklist(playlist.get("name"), results);
         },
         error: function(error) {
@@ -162,7 +163,20 @@
       restaurant.set("sporklists", lists);
       restaurant.save();
 
-      resetView();
+      var restaurant = Parse.Object.extend("Restaurant");
+      var query = new Parse.Query(restaurant);
+
+      query.equalTo("sporklists", currListId);
+      query.limit(1000);
+      query.withinMiles("location", new Parse.GeoPoint(position.latitude, position.longitude), 50);
+      query.find({
+        success: function(results) {
+          updateSporklist(currListName, results);
+        },
+        error: function(error) {
+          alert("Error: " + error.code + " " + error.message);
+        }
+      });
     }
   });
   

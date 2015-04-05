@@ -5,6 +5,7 @@ var autocomplete = null;
 var searchResults = null;
 var count = 0;
 var currListId = -1;
+var currListName = ""
 
 /* In the case of no location name, we use the user's current location */
 function retrieveSearchResults() {
